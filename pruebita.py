@@ -1,0 +1,2 @@
+listado = []
+print(len(listado))

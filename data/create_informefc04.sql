@@ -1,0 +1,20 @@
+CREATE TABLE "informefc04" (
+	"id"	INTEGER,
+	"unidad_jerarquica"	TEXT,
+	"entidad"	TEXT,
+	"entidad_text"	TEXT,
+	"reparticion"	TEXT,
+	"reparticion_text"	TEXT,
+	"dependencia"	TEXT,
+	"origen_movimiento"	TEXT,
+	"items"	TEXT,
+	"nro_informe"	TEXT,
+	"fecha_informe"	TEXT,
+	"observacion"	TEXT,
+	"cont_informe"	INTEGER,
+	"sub_total"	TEXT,
+	"iva"	TEXT,
+	"totales"	TEXT,
+	"cuenta"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
