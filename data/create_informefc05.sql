@@ -1,14 +1,15 @@
 CREATE TABLE "informefc05" (
 	"id"	INTEGER,
 	"fecha"	TEXT,
-	"cuenta"	INTEGER,
+	"cuenta"	TEXT,
 	"nombre_cuenta"	TEXT,
 	"valor_unitario"	REAL,
 	"origen"	TEXT,
 	"saldo"	REAL,
-	"compra"	REAL,
 	"total"	REAL,
 	"numero_informe"	INTEGER,
 	"fecha_informe"	TEXT,
+	"month"	TEXT,
+	"year"	TEXT,
 	PRIMARY KEY("id" AUTOINCREMENT)
 )

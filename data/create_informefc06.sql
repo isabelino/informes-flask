@@ -12,5 +12,7 @@ CREATE TABLE "informefc06" (
 	"dependencia"	TEXT,
 	"numero_informe"	INTEGER,
 	"fecha_informe"	TEXT,
+	"month"	TEXT,
+	"year"	TEXT,
 	PRIMARY KEY("id" AUTOINCREMENT)
 )

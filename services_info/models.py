@@ -134,6 +134,84 @@ def select_informe_fc04_all():
 
     return resultado
 
+def select_informe_fc05_all():
+    connectSelectfc05 = Conexion(f"select * from informefc05")
+    filas = connectSelectfc05.res.fetchall()#capturo las filas de datos
+    columnas= connectSelectfc05.res.description#capturo los nombres de columnas
+
+    #objetivo crear una lista de diccionario con filas y columnas
+
+    resultado =[]#lista para guadar diccionario
+   
+    for fila in filas:
+        dato={}#diccionario para cada registro
+        posicion=0#posicion de columna
+
+        for campo in columnas:
+            dato[campo[0]]=fila[posicion]
+            posicion += 1
+        resultado.append(dato)
+
+    connectSelectfc05.con.close()
+
+    return resultado
+
+def select_informe_fc05_items(m,y):
+    connectSelectfc05item = Conexion(f"SELECT T1.cuenta,T1.nombre_cuenta,T1.origen,T1.fecha,sum(DISTINCT(valor_unitario)) as valor_total FROM informefc05 T1 where month={m} and year={y} GROUP BY T1.cuenta ORDER BY fecha desc;")
+    filas = connectSelectfc05item.res.fetchall()#capturo las filas de datos
+    columnas= connectSelectfc05item.res.description#capturo los nombres de columnas
+
+    #objetivo crear una lista de diccionario con filas y columnas
+
+    resultado =[]#lista para guadar diccionario
+   
+    for fila in filas:
+        dato={}#diccionario para cada registro
+        posicion=0#posicion de columna
+
+        for campo in columnas:
+            dato[campo[0]]=fila[posicion]
+            posicion += 1
+        resultado.append(dato)
+
+    connectSelectfc05item.con.close()
+
+    return resultado
+
+def select_informe_fc05_sum(month,year):
+    connectSelectfc05sum = Conexion(f"select sum(valor_unitario) as total from informefc05 where month={month} and year={year};")
+    filas = connectSelectfc05sum.res.fetchall()#capturo las filas de datos
+
+    return filas[0][0]
+
+def select_informe_fc06_items(y):
+    connectSelectfc06item = Conexion(f"SELECT T1.cuenta,T1.nombre_cuenta,T1.origen,T1.fecha,sum(DISTINCT(valor_unitario)) as valor_total FROM informefc05 T1 where year={y} GROUP BY T1.cuenta ORDER BY fecha desc;")
+    filas = connectSelectfc06item.res.fetchall()#capturo las filas de datos
+    columnas= connectSelectfc06item.res.description#capturo los nombres de columnas
+
+    #objetivo crear una lista de diccionario con filas y columnas
+
+    resultado =[]#lista para guadar diccionario
+   
+    for fila in filas:
+        dato={}#diccionario para cada registro
+        posicion=0#posicion de columna
+
+        for campo in columnas:
+            dato[campo[0]]=fila[posicion]
+            posicion += 1
+        resultado.append(dato)
+
+    connectSelectfc06item.con.close()
+
+    return resultado
+
+def select_informe_fc06_sum(year):
+    connectSelectfc06sum = Conexion(f"select sum(valor_unitario) as total from informefc05 where year={year};")
+    filas = connectSelectfc06sum.res.fetchall()#capturo las filas de datos
+
+    return filas[0][0]
+
 def select_informe_fc04_items():
     connectSelectfc04 = Conexion(f"select items from informefc04")
     filas = connectSelectfc04.res.fetchall()#capturo las filas de datos
@@ -224,8 +302,8 @@ def select_informe_fc05_by_date(date_init):
 
 def insert_informe_fc05(registro):
     connectInsertfc05 = Conexion(
-        "insert into informefc05(fecha,cuenta,nombre_cuenta,valor_unitario,origen,saldo,compra,total,numero_informe,fecha_informe)"+
-        " values(?,?,?,?,?,?,?,?,?,?)",registro)
+        "insert into informefc05(fecha,cuenta,nombre_cuenta,valor_unitario,origen,saldo,total,numero_informe,fecha_informe,month,year)"+
+        " values(?,?,?,?,?,?,?,?,?,?,?)",registro)
     connectInsertfc05.con.commit()
     connectInsertfc05.con.close()
 
