@@ -464,12 +464,12 @@ class Routes:
             registro = request.json
             try:
                 hoy = date.today().isoformat()
-                ultimo_numero_list = select_contador_by('fc05')
+                #ultimo_numero_list = select_contador_by('fc05')
                 ultimo_numero=0
-                if len(ultimo_numero_list) == 0:
-                    ultimo_numero = 1
-                else:    
-                    ultimo_numero = ultimo_numero_list[0][0] + 1
+                #if len(ultimo_numero_list) == 0:
+                #    ultimo_numero = 1
+                #else:    
+                #    ultimo_numero = ultimo_numero_list[0][0] + 1
 
 
                 insert_contador([ 'fc05',ultimo_numero, hoy])
