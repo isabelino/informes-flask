@@ -91,7 +91,7 @@ def select_informe_fc03_by_date(date_init):
     return resultado
 
 def select_informe_fc03_all():
-    connectSelectfc03 = Conexion(f"select * from informefc03")
+    connectSelectfc03 = Conexion(f"select * from informefc03 order by id desc")
     filas = connectSelectfc03.res.fetchall()#capturo las filas de datos
     columnas= connectSelectfc03.res.description#capturo los nombres de columnas
 
@@ -113,7 +113,7 @@ def select_informe_fc03_all():
     return resultado
 
 def select_informe_fc04_all():
-    connectSelectfc04 = Conexion(f"select * from informefc04")
+    connectSelectfc04 = Conexion(f"select * from informefc04 order by id desc")
     filas = connectSelectfc04.res.fetchall()#capturo las filas de datos
     columnas= connectSelectfc04.res.description#capturo los nombres de columnas
 
@@ -135,7 +135,7 @@ def select_informe_fc04_all():
     return resultado
 
 def select_informe_fc05_all():
-    connectSelectfc05 = Conexion(f"select * from informefc05")
+    connectSelectfc05 = Conexion(f"select * from informefc05 order by id desc")
     filas = connectSelectfc05.res.fetchall()#capturo las filas de datos
     columnas= connectSelectfc05.res.description#capturo los nombres de columnas
 
@@ -157,7 +157,8 @@ def select_informe_fc05_all():
     return resultado
 
 def select_informe_fc05_items(m,y):
-    connectSelectfc05item = Conexion(f"SELECT T1.cuenta,T1.nombre_cuenta,T1.origen,T1.fecha,sum(DISTINCT(valor_unitario)) as valor_total FROM informefc05 T1 where month={m} and year={y} GROUP BY T1.cuenta ORDER BY fecha desc;")
+    #connectSelectfc05item = Conexion(f"SELECT T1.cuenta,T1.nombre_cuenta,T1.origen,T1.fecha,sum(DISTINCT(valor_unitario)) as valor_total FROM informefc05 T1 where month={m} and year={y} GROUP BY T1.cuenta ORDER BY fecha desc;")
+    connectSelectfc05item = Conexion(f"SELECT T1.cuenta,T1.nombre_cuenta,T1.origen,T1.fecha,sum(DISTINCT(T2.valor_unitario)) as saldo_anterior, sum(DISTINCT(T1.valor_unitario)) as valor_total, ( sum(DISTINCT(T1.valor_unitario))+ sum(DISTINCT(T2.valor_unitario))) as valor_final FROM informefc05 as T1,informefc05 as T2 where T1.cuenta=T2.cuenta and (CASE WHEN T1.valor_unitario==0.0 THEN (T2.month <= {m} and T2.year={y}) AND (T1.month={m} and T1.year={y}) ELSE (T2.month < {m} and T2.year={y}) AND (T1.month={m} and T1.year={y})  END) GROUP BY T1.cuenta ORDER BY T1.cuenta asc;")
     filas = connectSelectfc05item.res.fetchall()#capturo las filas de datos
     columnas= connectSelectfc05item.res.description#capturo los nombres de columnas
 
@@ -232,7 +233,7 @@ def select_informe_fc04_items():
     return sample_str
 
 def select_informe_fc10_all():
-    connectSelectfc10 = Conexion(f"select * from informefc10")
+    connectSelectfc10 = Conexion(f"select * from informefc10 order by id desc")
     filas = connectSelectfc10.res.fetchall()#capturo las filas de datos
     columnas= connectSelectfc10.res.description#capturo los nombres de columnas
 

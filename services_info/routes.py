@@ -400,11 +400,13 @@ class Routes:
         @app.route(f"/api/{VERSION}/fc10/new",methods=["POST"])
         def add_informe_fc10():
             registro = request.json
-            print("esto recibo",registro)
+            #print("esto recibo",registro)
             try:
                 hoy = date.today().isoformat()
+                year= datetime.now().strftime('%Y')
                 ultimo_numero_list = select_contador_by('fc10')
                 ultimo_numero=0
+                numero_informe=""
                 if len(ultimo_numero_list) == 0:
                     ultimo_numero = 1
                 else:    
@@ -412,18 +414,13 @@ class Routes:
             
                 insert_contador([ 'fc10',ultimo_numero, hoy])
 
-                items = [{'cuenta':'26112','subcuenta':'\n 03','analitico1':'\n \n 99','analitico2':'04','descripcion':"Muebles y enseres \nequipos de eseo y seguridad\nOtros equipos y mubles de AHS\nOtros tipos de enceradoras electricas\nAPARATO DIFUSOR SPHIRUS{11648}",'fecha_adquisicion':'01-10-2019','tipo':'factura','nro':'01','rotulado':'18-6-3-1224','cantidad':'1','valor_unitario':'59.091','valor_total':'59.091','signo':'signo','fecha_incorp':'10-10-2019','vida_util':'10','origen_movimento':'C'},
-                        {'cuenta':'26112','subcuenta':'\n 03','analitico1':'\n \n 99','analitico2':'04','descripcion':"Muebles y enseres \nequipos de eseo y seguridad\nOtros equipos y mubles de AHS\nOtros tipos de enceradoras electricas\nAPARATO DIFUSOR SPHIRUS{11648}",'fecha_adquisicion':'01-10-2019','tipo':'factura','nro':'01','rotulado':'18-6-3-1224','cantidad':'1','valor_unitario':'59.091','valor_total':'59.091','signo':'signo','fecha_incorp':'10-10-2019','vida_util':'10','origen_movimento':'C'}
-                        ]
-                #json to string
-                items_str = json.dumps(items, ensure_ascii=False)
-                #print("esto es items",items_str)
-                #print("esto es ultimo numero",ultimo_numero)
+                numero_informe=str(ultimo_numero)+"/"+str(year)
+                
                 insert_informe_fc10([
                     registro['entidad'],registro['entidad_text'],registro['unidad_jerarquica'],
                     registro['reparticion'],registro['reparticion_text'],registro['dependencia'],
                     registro['dependencia_text'],registro['responsable'],registro['cargo'],
-                    registro['items'],hoy,registro['numero_informe'],ultimo_numero,registro['cuenta'],registro['total']
+                    registro['items'],hoy,numero_informe,ultimo_numero,registro['cuenta'],registro['total']
                     ])
                 return jsonify(
                     {
