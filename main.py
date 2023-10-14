@@ -1,8 +1,10 @@
 import os
-
+from dotenv import load_dotenv
 from services_info import app, Routes
 
-routes = Routes(app)
+load_dotenv()  # load .env file to environment
+
+routes = Routes(app)  # load routes
 
 
 if __name__ == '__main__':
