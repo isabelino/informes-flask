@@ -1,0 +1,31 @@
+version: '3.3'
+
+volumes:
+  database:
+
+services:
+  database:
+    image: mysql/mysql-server:latest
+    container_name: database
+    command: --default-authentication-plugin=mysql_native_password  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql
+    ports:
+      - 3333:3306
+    volumes:
+      - database:/var/lib/mysql
+
+  aplication:
+    image: test_isabelino
+    container_name: aplication
+    restart: always
+    ports:
+      - 16000:5000
+    depends_on:
+      - database
+    links:
+      - database
+    

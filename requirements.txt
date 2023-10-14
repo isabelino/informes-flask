@@ -5,6 +5,7 @@ Flask-Cors==3.0.10
 greenlet==3.0.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
+loguru==0.7.2
 MarkupSafe==2.1.2
 pendulum==2.1.2
 PyMySQL==1.1.0
@@ -15,3 +16,4 @@ six==1.16.0
 SQLAlchemy==2.0.22
 typing_extensions==4.8.0
 Werkzeug==2.2.2
+win32-setctime==1.1.0

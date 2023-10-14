@@ -1,4 +1,10 @@
+from sqlalchemy import Column
+
 from services_info.n_core_models import ModelBase
+from sqlalchemy.orm import *
+from sqlalchemy import *
+
+__all__ = ['ModelContadores', 'ModelFC03', 'ModelFC04', 'ModelFC05', 'ModelFC06', 'ModelFC10']
 
 
 class ModelContadores(ModelBase):

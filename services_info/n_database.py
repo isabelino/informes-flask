@@ -1,3 +1,8 @@
+import contextlib
+import os
+
+from sqlalchemy import create_engine, MetaData, NullPool
+from sqlalchemy.orm import sessionmaker
 
 
 class Database:
@@ -17,7 +22,7 @@ class Database:
         self.cn = self.engine.connect()
         self.metadata = MetaData()
 
-    def select_database(self, db: str)->None:
+    def select_database(self, db: str) -> None:
         """Selecciona la base de datos"""
         self.database = db
         self.execute(f'use {db.strip().lower()}')
@@ -109,4 +114,3 @@ def repo():
     # d.select_database('dr2gsistemas_market')
     yield d
     d.cn.close()
-
