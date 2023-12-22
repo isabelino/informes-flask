@@ -6,7 +6,7 @@ volumes:
 services:
   database:
     image: mysql/mysql-server:latest
-    container_name: database
+    container_name: senave_database
     command: --default-authentication-plugin=mysql_native_password  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
     environment:
@@ -20,7 +20,7 @@ services:
 
   aplication:
     image: test_isabelino
-    container_name: aplication
+    container_name: senave_aplication
     restart: always
     ports:
       - 16000:5000
@@ -28,4 +28,3 @@ services:
       - database
     links:
       - database
-    
