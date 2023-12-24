@@ -1,7 +1,7 @@
 from functools import wraps
 
 from flask import jsonify
-from sqlalchemy.exc import SQLAlchemyError, IntegrityError
+from sqlalchemy.exc import SQLAlchemyError
 
 
 def catch_errors(f):
@@ -10,10 +10,14 @@ def catch_errors(f):
     :param f:
     :return:
     """
+
     @wraps(f)
     def decorated_function(*args, **kwargs):
         try:
             return f(*args, **kwargs)
         except SQLAlchemyError as e:
             return jsonify({"data": repr(e), "status": "Error"}), 400
+        except AttributeError as e:
+            return jsonify({"data": repr(e), "status": "Error"}), 400
+
     return decorated_function
