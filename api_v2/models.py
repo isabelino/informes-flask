@@ -16,7 +16,21 @@ class ModelBaseClass:
     id = Column(INTEGER, primary_key=True, autoincrement=True, comment='Codigo del registro')
 
     def as_dict(self) -> dict:
+        """
+        Transforma el objeto en un diccionario
+        :return:
+        """
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+    def from_dict(self, data):
+        """
+        Transforma un diccionario en el objeto
+        :param data:
+        :return:
+        """
+        for key, value in data.items():
+            if key in self.__table__.columns:
+                setattr(self, key, value)
 
 
 ModelBase = declarative_base(cls=ModelBaseClass)

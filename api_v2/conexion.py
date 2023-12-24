@@ -1,7 +1,7 @@
 import contextlib
 import os
 
-from sqlalchemy import create_engine, MetaData, NullPool
+from sqlalchemy import create_engine, MetaData, NullPool, text
 from sqlalchemy.orm import sessionmaker
 
 
