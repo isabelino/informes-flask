@@ -2,6 +2,7 @@ from datetime import datetime
 
 from flask import request
 from flask.views import MethodView
+from sqlalchemy.sql.operators import desc_op
 
 from api_v2.conexion import repo, repo_session
 from api_v2.models import ModelContadores
@@ -29,7 +30,7 @@ class ContadoresService(MethodView):
 
     def get(self):
         with repo_session() as s:
-            contadores = s.query(ModelContadores).all()
+            contadores = s.query(ModelContadores).order_by(desc_op(ModelContadores.id)).all()
             return make_response([item.as_dict() for item in contadores])
 
     def post(self):

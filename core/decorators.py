@@ -5,6 +5,11 @@ from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
 
 def catch_errors(f):
+    """
+    Decorador para captura de errores de SQLAlchemy
+    :param f:
+    :return:
+    """
     @wraps(f)
     def decorated_function(*args, **kwargs):
         try:
