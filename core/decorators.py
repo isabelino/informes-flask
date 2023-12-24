@@ -1,6 +1,6 @@
 from functools import wraps
-from http.client import HTTPResponse
 
+from flask import jsonify
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
 
@@ -15,5 +15,5 @@ def catch_errors(f):
         try:
             return f(*args, **kwargs)
         except SQLAlchemyError as e:
-            return jsonify({"data": str(e), "status": "Error"}), HTTPResponse.BAD_REQUEST
+            return jsonify({"data": repr(e), "status": "Error"}), 400
     return decorated_function
