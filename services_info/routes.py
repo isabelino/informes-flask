@@ -13,10 +13,19 @@ class Routes:
 
         @app.route("/")
         def init_api():
+            """
+            Home page
+            :return:
+            """
             return render_template('index.html')
 
         @app.route(f"/api/{VERSION}/prueba/<id>")
         def pruebafc03(id):
+            """
+            trae el registro de fc03
+            :param id:
+            :return:
+            """
 
             try:
                 registros = getfc03(id)

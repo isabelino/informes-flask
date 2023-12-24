@@ -19,7 +19,8 @@ services:
       - database:/var/lib/mysql
 
   aplication:
-    image: test_isabelino
+    build:
+      context: Dockerfile
     container_name: senave_aplication
     restart: always
     ports:

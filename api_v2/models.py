@@ -1,15 +1,33 @@
-from sqlalchemy import Column
+from sqlalchemy import Column, JSON
 
-from services_info.n_core_models import ModelBase
 from sqlalchemy.orm import *
 from sqlalchemy import *
 
-__all__ = ['ModelContadores', 'ModelFC03', 'ModelFC04', 'ModelFC05', 'ModelFC06', 'ModelFC10']
+__all__ = ['ModelBase','ModelContadores', 'ModelFC03', 'ModelFC04', 'ModelFC05', 'ModelFC06', 'ModelFC10']
+
+
+class ModelBaseClass:
+    __table_args__ = {
+        'extend_existing': True,
+        'mysql_charset': 'utf8mb4',
+        'mysql_collate': 'utf8mb4_unicode_ci'
+    }
+    __version__ = '1.0'
+    id = Column(INTEGER, primary_key=True, autoincrement=True, comment='Codigo del registro')
+
+    def as_dict(self) -> dict:
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+
+ModelBase = declarative_base(cls=ModelBaseClass)
+
+
+
 
 
 class ModelContadores(ModelBase):
     __tablename__ = 'contadores'
-    __table_args__.update({'comment': 'Contadores de los registros de la base de datos'})
+    # __table_args__.update({'comment': 'Contadores de los registros de la base de datos'})
     informe = Column(VARCHAR(50), nullable=False, comment='Nombre del informe')
     numero = Column(INTEGER, nullable=False, comment='Numero del informe')
     fecha = Column(DATE, nullable=False, comment='Fecha del informe')
@@ -17,7 +35,7 @@ class ModelContadores(ModelBase):
 
 class ModelFC03(ModelBase):
     __tablename__ = 'informe_fc03'
-    __table_args__.update({'comment': 'Informe de la FC03'})
+    # __table_args__.update({'comment': 'Informe de la FC03'})
     entidad = Column(VARCHAR(50), nullable=False, comment='Entidad')
     unidad_jerarquica = Column(VARCHAR(50), nullable=False, comment='Unidad jerarquica')
     reparticion = Column(VARCHAR(50), nullable=False, comment='Reparticion')
@@ -45,7 +63,7 @@ class ModelFC03(ModelBase):
     totales = Column(DECIMAL(10, 2), nullable=False, comment='Totales')
     numero_informe = Column(INTEGER, nullable=False, comment='Numero del informe')
     fecha_informe = Column(DATE, nullable=False, comment='Fecha del informe')
-    item = Column(VARCHAR(10000), nullable=False, comment='Items')
+    item = Column(JSON(True), nullable=False, comment='Items')
     reparticion_cod = Column(VARCHAR(50), nullable=False, comment='Codigo de la reparticion')
     dependencia_cod = Column(VARCHAR(50), nullable=False, comment='Codigo de la dependencia')
     cont_informe = Column(INTEGER, nullable=False, comment='Contador del informe')
@@ -53,7 +71,7 @@ class ModelFC03(ModelBase):
 
 class ModelFC04(ModelBase):
     __tablename__ = 'informe_fc04'
-    __table_args__.update({'comment': 'Informe de la FC04'})
+    # __table_args__.update({'comment': 'Informe de la FC04'})
     unidad_jerarquica = Column(VARCHAR(50), nullable=False, comment='Unidad jerarquica')
     entidad = Column(VARCHAR(50), nullable=False, comment='Entidad')
     entidad_text = Column(VARCHAR(50), nullable=False, comment='Entidad')
@@ -61,7 +79,7 @@ class ModelFC04(ModelBase):
     reparticion_text = Column(VARCHAR(50), nullable=False, comment='Reparticion')
     dependencia = Column(VARCHAR(50), nullable=False, comment='Dependencia')
     origen_movimiento = Column(VARCHAR(50), nullable=False, comment='Origen del movimiento')
-    items = Column(VARCHAR(10000), nullable=False, comment='Items')
+    items = Column(JSON(True), nullable=False, comment='Items')
     nro_informe = Column(INTEGER, nullable=False, comment='Numero del informe')
     fecha_informe = Column(DATE, nullable=False, comment='Fecha del informe')
     observacion = Column(VARCHAR(10000), nullable=False, comment='Observacion')
@@ -74,7 +92,7 @@ class ModelFC04(ModelBase):
 
 class ModelFC05(ModelBase):
     __tablename__ = 'informe_fc05'
-    __table_args__.update({'comment': 'Informe de la FC05'})
+    # __table_args__.update({'comment': 'Informe de la FC05'})
     fecha = Column(DATE, nullable=False, comment='Fecha')
     cuenta = Column(VARCHAR(50), nullable=False, comment='Cuenta')
     nombre_cuenta = Column(VARCHAR(50), nullable=False, comment='Nombre de la cuenta')
@@ -90,7 +108,7 @@ class ModelFC05(ModelBase):
 
 class ModelFC06(ModelBase):
     __tablename__ = 'informe_fc06'
-    __table_args__.update({'comment': 'Informe de la FC06'})
+    # __table_args__.update({'comment': 'Informe de la FC06'})
 
     cuenta = Column(VARCHAR(50), nullable=False, comment='Cuenta')
     sub_cuenta = Column(VARCHAR(50), nullable=False, comment='Sub cuenta')
@@ -110,7 +128,7 @@ class ModelFC06(ModelBase):
 
 class ModelFC10(ModelBase):
     __tablename__ = 'informe_fc10'
-    __table_args__.update({'comment': 'Informe de la FC10'})
+    # __table_args__.update({'comment': 'Informe de la FC10'})
     entidad = Column(VARCHAR(50), nullable=False, comment='Entidad')
     entidad_text = Column(VARCHAR(50), nullable=False, comment='Entidad')
     unidad_jerarquica = Column(VARCHAR(50), nullable=False, comment='Unidad jerarquica')
@@ -120,7 +138,7 @@ class ModelFC10(ModelBase):
     dependencia_text = Column(VARCHAR(50), nullable=False, comment='Dependencia')
     responsable = Column(VARCHAR(50), nullable=False, comment='Responsable')
     cargo = Column(VARCHAR(50), nullable=False, comment='Cargo')
-    items = Column(VARCHAR(10000), nullable=False, comment='Items')
+    items = Column(JSON(True), nullable=False, comment='Items')
     fecha_informe = Column(DATE, nullable=False, comment='Fecha del informe')
     numero_informe = Column(INTEGER, nullable=False, comment='Numero del informe')
     cont_informe = Column(INTEGER, nullable=False, comment='Contador del informe')
