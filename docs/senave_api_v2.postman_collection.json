@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "0fa821d7-c2c7-417f-a5e8-7ec67ae0a8c4",
+		"name": "senave_api_v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1017862"
+	},
+	"item": [
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contadores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/contadores",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"contadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc03_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc03",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc03_bydate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc03/date/2023-12-24",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc03",
+						"date",
+						"2023-12-24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc04_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc04",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc05_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc05",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc05_items_by_month_year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc05/items/1/2020",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc05",
+						"items",
+						"1",
+						"2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc06_items_year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc05/items/1/2020",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc05",
+						"items",
+						"1",
+						"2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/contadores/84",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"contadores",
+						"84"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contador_by_numero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/contadores/last/fc10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"contadores",
+						"last",
+						"fc10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc05_bydate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc05/date/2020-01-01",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc05",
+						"date",
+						"2020-01-01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"informe\":\"fc10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v2/contadores",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"contadores"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
