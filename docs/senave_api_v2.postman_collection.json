@@ -64,6 +64,54 @@
 			"response": []
 		},
 		{
+			"name": "fc10_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc10/all",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc10",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc03_add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v2/fc03",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "fc03_bydate",
 			"request": {
 				"method": "GET",
@@ -104,9 +152,56 @@
 			"response": []
 		},
 		{
+			"name": "fc04_add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v2/fc04",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "fc05_all",
 			"request": {
 				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v2/fc05",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"fc05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fc05_add",
+			"request": {
+				"method": "POST",
 				"header": [],
 				"url": {
 					"raw": "{{url}}/api/v2/fc05",
@@ -150,16 +245,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/v2/fc05/items/1/2020",
+					"raw": "{{url}}/api/v2/fc06/items/2020",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"v2",
-						"fc05",
+						"fc06",
 						"items",
-						"1",
 						"2020"
 					]
 				}
