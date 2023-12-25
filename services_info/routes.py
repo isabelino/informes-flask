@@ -120,24 +120,24 @@ class Routes:
         #             }
         #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        @app.route(f"/api/{VERSION}/fc06/items/<y>")
-        def fc06_items(y):
-            try:
-                registros = select_informe_fc06_items(y)
-                # return jsonify(registros)
-                return jsonify(
-                    {
-                        "data": registros,
-                        "status": "OK"
-                    }
-                ), HTTPStatus.OK  # agrego codigo de respuesta http
-            except sqlite3.Error as e:
-                return jsonify(
-                    {
-                        "data": str(e),
-                        "status": "Error"
-                    }
-                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        # @app.route(f"/api/{VERSION}/fc06/items/<y>")
+        # def fc06_items(y):
+        #     try:
+        #         registros = select_informe_fc06_items(y)
+        #         # return jsonify(registros)
+        #         return jsonify(
+        #             {
+        #                 "data": registros,
+        #                 "status": "OK"
+        #             }
+        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
+        #     except sqlite3.Error as e:
+        #         return jsonify(
+        #             {
+        #                 "data": str(e),
+        #                 "status": "Error"
+        #             }
+        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
         @app.route(f"/api/{VERSION}/fc06/sumitem/<y>")
         def all_fc06_items_sum(y):

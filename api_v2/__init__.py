@@ -6,7 +6,7 @@ from api_v2.fc03 import FC03Service, FC03ByDateService
 from api_v2.fc04 import FC04Service
 from api_v2.fc05 import FC05Service, FC05ByDateService, FC05ItemsService
 from api_v2.fc06 import FC06Service, FC06ItemsService
-from api_v2.fc10 import FC10Service
+from api_v2.fc10 import FC10Service, FC10ListService
 
 api_v2 = Blueprint('api_v2', __name__)
 
@@ -24,3 +24,4 @@ api_v2.add_url_rule('/v2/fc05/items/<month>/<year>', view_func=FC05ItemsService.
 api_v2.add_url_rule('/v2/fc06', view_func=FC06Service.as_view('fc06'))
 api_v2.add_url_rule('/v2/fc06/items/<year>', view_func=FC06ItemsService.as_view('fc06_year'))
 api_v2.add_url_rule('/v2/fc10', view_func=FC10Service.as_view('fc10'))
+api_v2.add_url_rule('/v2/fc10/all', view_func=FC10ListService.as_view('fc10_list'))

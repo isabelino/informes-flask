@@ -14,6 +14,23 @@ class FC05Service(MethodView):
             lista = s.query(ModelFC05).all()
             return make_response([item.as_dict() for item in lista])
 
+    def post(self):
+        data = request.get_json()
+        model = ModelFC05()
+        model.from_dict(data)
+        model.fecha = datetime.date.today().isoformat()
+        model.numero = last_id("fc05")
+
+        with repo_session() as s:
+            try:
+                s.add(model)
+            except DatabaseError as e:
+                s.rollback()
+                return make_response(e, 400)
+            else:
+                s.commit()
+                return make_response(model.as_dict())
+
 
 class FC05ItemsService(MethodView):
     decorators = [catch_errors]
