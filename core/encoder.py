@@ -1,9 +1,7 @@
 import datetime
+import decimal
 import json
 from builtins import issubclass
-
-import decimal
-from flask.json import JSONEncoder
 
 from api_v2.models import ModelBase
 
@@ -22,8 +20,7 @@ class CustomJsonEncoder(json.JSONEncoder):
             return float(obj)
         elif issubclass(obj.__class__, ModelBase):
             return obj.as_dict()
-
-
-
+        elif isinstance(obj, Exception):
+            return repr(obj)
 
         return json.JSONEncoder.default(self, obj)

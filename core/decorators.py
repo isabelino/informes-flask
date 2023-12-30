@@ -3,6 +3,8 @@ from functools import wraps
 from flask import jsonify
 from sqlalchemy.exc import SQLAlchemyError
 
+from api_v2.loggers import logger
+
 
 def catch_errors(f):
     """
@@ -14,10 +16,13 @@ def catch_errors(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         try:
+            logger.debug("Catch errors" + str(args) + str(kwargs))
             return f(*args, **kwargs)
         except SQLAlchemyError as e:
-            return jsonify({"data": repr(e), "status": "Error"}), 400
+            logger.error(repr(e))
+            return jsonify({"data": e, "status": "Error"}), 400
         except AttributeError as e:
+            logger.error(repr(e))
             return jsonify({"data": repr(e), "status": "Error"}), 400
 
     return decorated_function

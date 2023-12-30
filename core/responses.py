@@ -1,7 +1,9 @@
-from flask import jsonify, Response
+from typing import Optional
+
+from flask import jsonify
 
 
-def make_response(data, status=200):
+def make_response(data: Optional[str | Exception], status=200):
     """
     Crear una respuesta personalizada
     :param data:
@@ -9,8 +11,7 @@ def make_response(data, status=200):
     :return:
     """
 
-    def response_code_str(code=200)->str:
-
+    def response_code_str(code=200) -> str:
         # all http status
         code_table = {
             200: 'OK',
@@ -23,7 +24,9 @@ def make_response(data, status=200):
 
         return code_table[code] or 'Bad Request'
 
-
+    if isinstance(data, Exception):
+        status = 400
+        data = repr(data)
 
     return jsonify({
         "data": data,
