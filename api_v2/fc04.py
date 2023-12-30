@@ -18,3 +18,30 @@ class FC04Service(MethodView):
         model.from_dict(data)
         model.fecha = datetime.date.today().isoformat()
         model.numero = last_id("fc04")
+        with repo_session() as s:
+            try:
+                s.add(model)
+            except DatabaseError as e:
+                s.rollback()
+                return make_response(e, 400)
+            else:
+                s.commit()
+                return make_response(model.as_dict())
+
+
+class FC04ItemsService(MethodView):
+    def get(self):
+        with repo_session() as s:
+            lista = s.query(ModelFC04.items).order_by(ModelFC04.id.desc()).all()
+            return make_response(lista)
+
+
+class FC04ListService(MethodView):
+    def get(self):
+        """
+        Obtiene la lista de FC04
+        :return:
+        """
+        with repo_session() as s:
+            lista = s.query(ModelFC04).all()
+        return make_response(lista)

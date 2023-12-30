@@ -30,11 +30,17 @@ class ContadorLastIdService(MethodView):
 
     def get(self, name: str):
         with repo_session() as s:
-            item = s.query(ModelContadores) \
+            item = s.query(ModelContadores.numero) \
                 .filter(ModelContadores.informe == name) \
                 .order_by(desc_op(ModelContadores.numero)) \
                 .first()
-            return make_response(item.as_dict() if item else None)
+
+            if not item:
+                item = ModelContadores()
+                item.informe = name
+                item.numero = 1
+
+            return make_response(item if item else None)
 
 
 class ContadoresService(MethodView):

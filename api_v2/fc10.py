@@ -31,5 +31,5 @@ class FC10Service(MethodView):
 class FC10ListService(MethodView):
     def get(self):
         with repo_session() as s:
-            lista = s.query(ModelFC10).all()
+            lista = s.query(ModelFC10).order_by(ModelFC10.id.desc()).all()
         return make_response([item.as_dict() for item in lista])

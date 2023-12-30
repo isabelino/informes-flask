@@ -33,6 +33,17 @@ class FC03Service(MethodView):
                 return make_response(model.as_dict())
 
 
+class FC03ListService(MethodView):
+    """
+    Obtiene la lista de FC03
+    """
+
+    def get(self):
+        with repo_session() as s:
+            lista = s.query(ModelFC03).order_by(ModelFC03.id.desc()).all()
+            return make_response(lista)
+
+
 class FC03ByDateService(MethodView):
     decorators = [catch_errors]
 

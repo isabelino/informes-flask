@@ -32,6 +32,13 @@ class FC05Service(MethodView):
                 return make_response(model.as_dict())
 
 
+class FC05ListService(MethodView):
+    def get(self):
+        with repo_session() as s:
+            lista = s.query(ModelFC05).order_by(ModelFC05.id.desc()).all()
+        return make_response(lista)
+
+
 class FC05ItemsService(MethodView):
     decorators = [catch_errors]
 

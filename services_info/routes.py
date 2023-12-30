@@ -44,100 +44,100 @@ class Routes:
                     }
                 ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        # @app.route(f"/api/{VERSION}/fc03/all")
-        # def all_fc03_items():
-        #     try:
-        #         registros = select_informe_fc03_all()
-        #         # return jsonify(registros)
-        #         return jsonify(
-        #             {
-        #                 "data": registros,
-        #                 "status": "OK"
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/fc03/all")
+        def all_fc03_items():
+            try:
+                registros = select_informe_fc03_all()
+                # return jsonify(registros)
+                return jsonify(
+                    {
+                        "data": registros,
+                        "status": "OK"
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        # @app.route(f"/api/{VERSION}/fc04/all")
-        # def all_fc04_items():
-        #     try:
-        #         registros = select_informe_fc04_all()
-        #         # return jsonify(registros)
-        #         return jsonify(
-        #             {
-        #                 "data": registros,
-        #                 "status": "OK"
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/fc04/all")
+        def all_fc04_items():
+            try:
+                registros = select_informe_fc04_all()
+                # return jsonify(registros)
+                return jsonify(
+                    {
+                        "data": registros,
+                        "status": "OK"
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        # @app.route(f"/api/{VERSION}/fc05/all")
-        # def all_fc05_items():
-        #     try:
-        #         registros = select_informe_fc05_all()
-        #         # return jsonify(registros)
-        #         return jsonify(
-        #             {
-        #                 "data": registros,
-        #                 "status": "OK"
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/fc05/all")
+        def all_fc05_items():
+            try:
+                registros = select_informe_fc05_all()
+                # return jsonify(registros)
+                return jsonify(
+                    {
+                        "data": registros,
+                        "status": "OK"
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        # @app.route(f"/api/{VERSION}/fc05/items/<m>/<y>")
-        # def fc05_items(m, y):
-        #     try:
-        #         registros = select_informe_fc05_items(m, y)
-        #         # return jsonify(registros)
-        #         return jsonify(
-        #             {
-        #                 "data": registros,
-        #                 "status": "OK"
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/fc05/items/<m>/<y>")
+        def fc05_items(m, y):
+            try:
+                registros = select_informe_fc05_items(m, y)
+                # return jsonify(registros)
+                return jsonify(
+                    {
+                        "data": registros,
+                        "status": "OK"
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        # @app.route(f"/api/{VERSION}/fc06/items/<y>")
-        # def fc06_items(y):
-        #     try:
-        #         registros = select_informe_fc06_items(y)
-        #         # return jsonify(registros)
-        #         return jsonify(
-        #             {
-        #                 "data": registros,
-        #                 "status": "OK"
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/fc06/items/<y>")
+        def fc06_items(y):
+            try:
+                registros = select_informe_fc06_items(y)
+                # return jsonify(registros)
+                return jsonify(
+                    {
+                        "data": registros,
+                        "status": "OK"
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
         @app.route(f"/api/{VERSION}/fc06/sumitem/<y>")
         def all_fc06_items_sum(y):
@@ -217,46 +217,46 @@ class Routes:
                     }
                 ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        # @app.route(f"/api/{VERSION}/contadores")
-        # def all_movements():
-        #
-        #     try:
-        #         registros = select_all_contador()
-        #         # return jsonify(registros)
-        #         return jsonify(
-        #             {
-        #                 "data": registros,
-        #                 "status": "OK"
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/contadores")
+        def all_movements():
+
+            try:
+                registros = select_all_contador()
+                # return jsonify(registros)
+                return jsonify(
+                    {
+                        "data": registros,
+                        "status": "OK"
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
         # mostrar ultimo numero de informe
-        # @app.route(f"/api/{VERSION}/contador/<num>")
-        # def contador_by_numero(num):
-        #
-        #     try:
-        #         registros = select_contador_by(num)
-        #         if len(registros) == 0:
-        #             registros = [[0]]
-        #         return jsonify(
-        #             {
-        #                 "data": registros[0][0]
-        #             }
-        #         ), HTTPStatus.OK  # agrego codigo de respuesta http
-        #     except sqlite3.Error as e:
-        #         return jsonify(
-        #             {
-        #                 "data": str(e),
-        #                 "status": "Error"
-        #             }
-        #         ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+        @app.route(f"/api/{VERSION}/contador/<num>")
+        def contador_by_numero(num):
+
+            try:
+                registros = select_contador_by(num)
+                if len(registros) == 0:
+                    registros = [[0]]
+                return jsonify(
+                    {
+                        "data": registros[0][0]
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
         # crear nuevo registro de contador de informe
         # @app.route(f"/api/{VERSION}/contador/new", methods=["POST"])
