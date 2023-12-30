@@ -12,15 +12,15 @@ api_v2 = Blueprint('api_v2', __name__)
 
 # registro de rutas
 api_v2.add_url_rule('/v2/test', view_func=Prueba.as_view('test'))
-api_v2.add_url_rule('/v2/contador/<id>', view_func=ContadorService.as_view('contador_api'))
-api_v2.add_url_rule('/v2/contadores', view_func=ContadoresService.as_view('contadores_api'))
-api_v2.add_url_rule('/v2/contador/<name>', view_func=ContadorLastIdService.as_view('contador_last_api'))
+api_v2.add_url_rule('/v2/contador/<name>', view_func=ContadorService.as_view('contador_api'))
+# api_v2.add_url_rule('/v2/contadores', view_func=ContadoresService.as_view('contadores_api'))
+# api_v2.add_url_rule('/v2/contador/<name>', view_func=ContadorLastIdService.as_view('contador_last_api'))
 # ----------------------------------------------------------------------------------------------------------------
-api_v2.add_url_rule('/v2/fc03', view_func=FC03Service.as_view('fc03'))
+api_v2.add_url_rule('/v2/fc03/new', view_func=FC03Service.as_view('fc03'))
 api_v2.add_url_rule('/v2/fc03/all', view_func=FC03ListService.as_view('fc03_all'))
 api_v2.add_url_rule('/v2/fc03/date/<date>', view_func=FC03ByDateService.as_view('fc03_by_date'))
 # ----------------------------------------------------------------------------------------------------------------
-api_v2.add_url_rule('/v2/fc04', view_func=FC04Service.as_view('fc04'))
+# api_v2.add_url_rule('/v2/fc04', view_func=FC04Service.as_view('fc04'))
 api_v2.add_url_rule('/v2/fc04/new', view_func=FC04Service.as_view('fc04_new'))
 api_v2.add_url_rule('/v2/fc04/items', view_func=FC04ItemsService.as_view('fc04_items'))
 api_v2.add_url_rule('/v2/fc04/all', view_func=FC04ListService.as_view('fc04_all'))

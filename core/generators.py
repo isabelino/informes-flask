@@ -39,7 +39,7 @@ def last_id(informe_name: str) -> int:
             logger.debug(nobj.as_dict())
             return nobj.numero
         else:
-            logger.info(f'Nuevo id de {informe_name} de {obj.informe}')
+            logger.info(f'Nuevo id de {informe_name} es 1')
             obj = ModelContadores()
             obj.numero = 1
             obj.informe = informe_name

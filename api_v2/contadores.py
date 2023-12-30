@@ -5,6 +5,7 @@ from flask.views import MethodView
 from sqlalchemy.sql.operators import desc_op
 
 from api_v2.conexion import repo_session
+from api_v2.loggers import logger
 from api_v2.models import ModelContadores
 from core.decorators import catch_errors
 from core.generators import last_id
@@ -17,9 +18,10 @@ class ContadorService(MethodView):
     """
     decorators = [catch_errors]
 
-    def get(self, id: int):
-        with repo_session() as s:
-            return make_response(s.query(ModelContadores).filter(ModelContadores.id == id).one_or_none())
+    def get(self, name: str):
+        logger.debug(f'Obtiene el contador {name}')
+        contador = last_id(name)
+        return make_response(contador)
 
 
 class ContadorLastIdService(MethodView):
@@ -30,17 +32,15 @@ class ContadorLastIdService(MethodView):
 
     def get(self, name: str):
         with repo_session() as s:
-            item = s.query(ModelContadores.numero) \
-                .filter(ModelContadores.informe == name) \
-                .order_by(desc_op(ModelContadores.numero)) \
-                .first()
+            contador = s.query(ModelContadores) \
+                .filter_by(informe=name) \
+                .order_by(desc_op(ModelContadores.numero)).limit(1).one_or_none()
 
-            if not item:
-                item = ModelContadores()
-                item.informe = name
-                item.numero = 1
+            return make_response(contador)
 
-            return make_response(item if item else None)
+    def post(self, name):
+        contador = last_id(name)
+        return make_response(contador)
 
 
 class ContadoresService(MethodView):

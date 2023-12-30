@@ -719,3 +719,313 @@
   | {'extra': {'entidad': None, 'unidad_jerarquica': None, 'reparticion': None, 'dependencia': None, 'area': None, 'origen': None, 'cuenta': None, 'sub_cuenta': None, 'analitico_1': None, 'analitico_2': None, 'descripcion': None, 'fecha': '2023-12-30', 'tipo': None, 'numero': 14, 'rotulado': None, 'cantidad': None, 'valor_unitario': None, 'valor_total': None, 'signo': None, 'fecha_incorp': None, 'vida_util': None, 'origen_movi': None, 'sub_total': None, 'iva': None, 'totales': None, 'numero_informe': None, 'fecha_informe': None, 'item': None, 'reparticion_cod': None, 'dependencia_cod': None, 'cont_informe': None, 'id': None}}
 2023-12-30 16:34:48 | DEBUG | {'entidad': None, 'unidad_jerarquica': None, 'reparticion': None, 'dependencia': None, 'area': None, 'origen': None, 'cuenta': None, 'sub_cuenta': None, 'analitico_1': None, 'analitico_2': None, 'descripcion': None, 'fecha': '2023-12-30', 'tipo': None, 'numero': 14, 'rotulado': None, 'cantidad': None, 'valor_unitario': None, 'valor_total': None, 'signo': None, 'fecha_incorp': None, 'vida_util': None, 'origen_movi': None, 'sub_total': None, 'iva': None, 'totales': None, 'numero_informe': None, 'fecha_informe': None, 'item': None, 'reparticion_cod': None, 'dependencia_cod': None, 'cont_informe': None, 'id': None} |  | {}
 2023-12-30 16:34:48 | DEBUG | {'entidad': None, 'unidad_jerarquica': None, 'reparticion': None, 'dependencia': None, 'area': None, 'origen': None, 'cuenta': None, 'sub_cuenta': None, 'analitico_1': None, 'analitico_2': None, 'descripcion': None, 'fecha': '2023-12-30', 'tipo': None, 'numero': 14, 'rotulado': None, 'cantidad': None, 'valor_unitario': None, 'valor_total': None, 'signo': None, 'fecha_incorp': None, 'vida_util': None, 'origen_movi': None, 'sub_total': None, 'iva': None, 'totales': None, 'numero_informe': None, 'fecha_informe': None, 'item': None, 'reparticion_cod': None, 'dependencia_cod': None, 'cont_informe': None, 'id': None}
+2023-12-30 16:36:26 | DEBUG | Catch errors(){}
+  | {}
+2023-12-30 16:40:07 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:40:07 | DEBUG | Catch errors(){}
+2023-12-30 16:40:07 | DEBUG | Obtiene la lista de FC03 |  | {}
+2023-12-30 16:40:07 | DEBUG | Obtiene la lista de FC03
+2023-12-30 16:40:07 | DEBUG | {'month': 1, 'year': 2023} |  | {}
+2023-12-30 16:40:07 | DEBUG | {'month': 1, 'year': 2023}
+2023-12-30 16:40:07 | INFO | Ultimo id 14 de fc03 |  | {}
+2023-12-30 16:40:07 | DEBUG | {'informe': 'fc03', 'numero': 15, 'fecha': datetime.date(2023, 12, 30), 'id': 308} |  | {}
+2023-12-30 16:40:07 | DEBUG | {'informe': 'fc03', 'numero': 15, 'fecha': datetime.date(2023, 12, 30), 'id': 308}
+2023-12-30 16:40:07 | WARNING | generado numero 15 |  | {'extra': {'entidad': None, 'unidad_jerarquica': None, 'reparticion': None, 'dependencia': None, 'area': None, 'origen': None, 'cuenta': None, 'sub_cuenta': None, 'analitico_1': None, 'analitico_2': None, 'descripcion': None, 'fecha': '2023-12-30', 'tipo': None, 'numero': 15, 'rotulado': None, 'cantidad': None, 'valor_unitario': None, 'valor_total': None, 'signo': None, 'fecha_incorp': None, 'vida_util': None, 'origen_movi': None, 'sub_total': None, 'iva': None, 'totales': None, 'numero_informe': None, 'fecha_informe': None, 'item': None, 'reparticion_cod': None, 'dependencia_cod': None, 'cont_informe': None, 'id': None}}
+2023-12-30 16:40:07 | WARNING | generado numero 15
+2023-12-30 16:40:07 | DEBUG | {'entidad': None, 'unidad_jerarquica': None, 'reparticion': None, 'dependencia': None, 'area': None, 'origen': None, 'cuenta': None, 'sub_cuenta': None, 'analitico_1': None, 'analitico_2': None, 'descripcion': None, 'fecha': '2023-12-30', 'tipo': None, 'numero': 15, 'rotulado': None, 'cantidad': None, 'valor_unitario': None, 'valor_total': None, 'signo': None, 'fecha_incorp': None, 'vida_util': None, 'origen_movi': None, 'sub_total': None, 'iva': None, 'totales': None, 'numero_informe': None, 'fecha_informe': None, 'item': None, 'reparticion_cod': None, 'dependencia_cod': None, 'cont_informe': None, 'id': None} |  | {}
+2023-12-30 16:40:07 | DEBUG | {'entidad': None, 'unidad_jerarquica': None, 'reparticion': None, 'dependencia': None, 'area': None, 'origen': None, 'cuenta': None, 'sub_cuenta': None, 'analitico_1': None, 'analitico_2': None, 'descripcion': None, 'fecha': '2023-12-30', 'tipo': None, 'numero': 15, 'rotulado': None, 'cantidad': None, 'valor_unitario': None, 'valor_total': None, 'signo': None, 'fecha_incorp': None, 'vida_util': None, 'origen_movi': None, 'sub_total': None, 'iva': None, 'totales': None, 'numero_informe': None, 'fecha_informe': None, 'item': None, 'reparticion_cod': None, 'dependencia_cod': None, 'cont_informe': None, 'id': None}
+2023-12-30 16:40:21 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:40:21 | DEBUG | Catch errors(){}
+2023-12-30 16:40:21 | DEBUG | Obtiene la lista de FC03 |  | {}
+2023-12-30 16:40:21 | DEBUG | Obtiene la lista de FC03
+2023-12-30 16:44:05 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:44:07 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:44:07 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:45:11 | DEBUG | Obtiene la lista de FC04
+  | {}
+2023-12-30 16:45:11 | INFO | Nuevo id de fc04 es 1
+  | {}
+2023-12-30 16:45:11 | SUCCESS | {'informe': 'fc04', 'numero': 1, 'fecha': '2023-12-30', 'id': None}
+2023-12-30 16:45:11 | SUCCESS | {'informe': 'fc04', 'numero': 1, 'fecha': '2023-12-30', 'id': None} |  | {}
+2023-12-30 16:45:11 | DEBUG | {'informe': 'fc04', 'numero': 1, 'fecha': datetime.date(2023, 12, 30), 'id': 309} |  | {}
+2023-12-30 16:45:11 | DEBUG | {'informe': 'fc04', 'numero': 1, 'fecha': datetime.date(2023, 12, 30), 'id': 309}
+2023-12-30 16:45:11 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:08 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:08 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:08 | INFO | Nuevo id de fc04 es 1 |  | {}
+2023-12-30 16:46:08 | INFO | Nuevo id de fc04 es 1
+2023-12-30 16:46:08 | SUCCESS | {'informe': 'fc04', 'numero': 1, 'fecha': '2023-12-30', 'id': None} |  | {}
+2023-12-30 16:46:08 | SUCCESS | {'informe': 'fc04', 'numero': 1, 'fecha': '2023-12-30', 'id': None}
+2023-12-30 16:46:08 | DEBUG | {'informe': 'fc04', 'numero': 1, 'fecha': datetime.date(2023, 12, 30), 'id': 1}
+2023-12-30 16:46:08 | DEBUG | {'informe': 'fc04', 'numero': 1, 'fecha': datetime.date(2023, 12, 30), 'id': 1} |  | {}
+2023-12-30 16:46:08 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:13 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:13 | INFO | Ultimo id 1 de fc04
+  | {}
+2023-12-30 16:46:13 | DEBUG | {'informe': 'fc04', 'numero': 2, 'fecha': datetime.date(2023, 12, 30), 'id': 2} |  | {}
+2023-12-30 16:46:13 | DEBUG | {'informe': 'fc04', 'numero': 2, 'fecha': datetime.date(2023, 12, 30), 'id': 2}
+2023-12-30 16:46:13 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:13 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+2023-12-30 16:46:14 | DEBUG | Obtiene la lista de FC04
+  | {}
+2023-12-30 16:46:14 | INFO | Ultimo id 2 de fc04 |  | {}
+2023-12-30 16:46:14 | DEBUG | {'informe': 'fc04', 'numero': 3, 'fecha': datetime.date(2023, 12, 30), 'id': 3} |  | {}
+2023-12-30 16:46:14 | DEBUG | {'informe': 'fc04', 'numero': 3, 'fecha': datetime.date(2023, 12, 30), 'id': 3}
+2023-12-30 16:46:14 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+2023-12-30 16:46:14 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:14 | DEBUG | Obtiene la lista de FC04
+  | {}
+2023-12-30 16:46:14 | INFO | Ultimo id 3 de fc04
+  | {}
+2023-12-30 16:46:14 | DEBUG | {'informe': 'fc04', 'numero': 4, 'fecha': datetime.date(2023, 12, 30), 'id': 4} |  | {}
+2023-12-30 16:46:14 | DEBUG | {'informe': 'fc04', 'numero': 4, 'fecha': datetime.date(2023, 12, 30), 'id': 4}
+2023-12-30 16:46:14 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+  | {}
+2023-12-30 16:46:15 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:15 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:15 | INFO | Ultimo id 4 de fc04 |  | {}
+2023-12-30 16:46:15 | DEBUG | {'informe': 'fc04', 'numero': 5, 'fecha': datetime.date(2023, 12, 30), 'id': 5} |  | {}
+2023-12-30 16:46:15 | DEBUG | {'informe': 'fc04', 'numero': 5, 'fecha': datetime.date(2023, 12, 30), 'id': 5}
+2023-12-30 16:46:15 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:16 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:16 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:16 | INFO | Ultimo id 5 de fc04 |  | {}
+2023-12-30 16:46:16 | INFO | Ultimo id 5 de fc04
+2023-12-30 16:46:16 | DEBUG | {'informe': 'fc04', 'numero': 6, 'fecha': datetime.date(2023, 12, 30), 'id': 6} |  | {}
+2023-12-30 16:46:16 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:17 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:17 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:17 | INFO | Ultimo id 6 de fc04 |  | {}
+2023-12-30 16:46:17 | INFO | Ultimo id 6 de fc04
+2023-12-30 16:46:17 | DEBUG | {'informe': 'fc04', 'numero': 7, 'fecha': datetime.date(2023, 12, 30), 'id': 7} |  | {}
+2023-12-30 16:46:17 | DEBUG | {'informe': 'fc04', 'numero': 7, 'fecha': datetime.date(2023, 12, 30), 'id': 7}
+2023-12-30 16:46:17 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+2023-12-30 16:46:17 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:17 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:17 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:17 | INFO | Ultimo id 7 de fc04 |  | {}
+2023-12-30 16:46:17 | INFO | Ultimo id 7 de fc04
+2023-12-30 16:46:17 | DEBUG | {'informe': 'fc04', 'numero': 8, 'fecha': datetime.date(2023, 12, 30), 'id': 8} |  | {}
+2023-12-30 16:46:17 | DEBUG | {'informe': 'fc04', 'numero': 8, 'fecha': datetime.date(2023, 12, 30), 'id': 8}
+2023-12-30 16:46:17 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+2023-12-30 16:46:17 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:18 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:18 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:18 | INFO | Ultimo id 8 de fc04 |  | {}
+2023-12-30 16:46:18 | DEBUG | {'informe': 'fc04', 'numero': 9, 'fecha': datetime.date(2023, 12, 30), 'id': 9} |  | {}
+2023-12-30 16:46:18 | DEBUG | {'informe': 'fc04', 'numero': 9, 'fecha': datetime.date(2023, 12, 30), 'id': 9}
+2023-12-30 16:46:18 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+  | {}
+2023-12-30 16:46:19 | DEBUG | Obtiene la lista de FC04
+  | {}
+2023-12-30 16:46:19 | INFO | Ultimo id 9 de fc04
+  | {}
+2023-12-30 16:46:19 | DEBUG | {'informe': 'fc04', 'numero': 10, 'fecha': datetime.date(2023, 12, 30), 'id': 10}
+  | {}
+2023-12-30 16:46:19 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+2023-12-30 16:46:19 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:20 | DEBUG | Obtiene la lista de FC04 |  | {}
+2023-12-30 16:46:20 | DEBUG | Obtiene la lista de FC04
+2023-12-30 16:46:20 | INFO | Ultimo id 10 de fc04 |  | {}
+2023-12-30 16:46:20 | INFO | Ultimo id 10 de fc04
+2023-12-30 16:46:20 | DEBUG | {'informe': 'fc04', 'numero': 11, 'fecha': datetime.date(2023, 12, 30), 'id': 11} |  | {}
+2023-12-30 16:46:20 | DEBUG | {'informe': 'fc04', 'numero': 11, 'fecha': datetime.date(2023, 12, 30), 'id': 11}
+2023-12-30 16:46:20 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None} |  | {}
+2023-12-30 16:46:20 | DEBUG | {'unidad_jerarquica': None, 'entidad': None, 'entidad_text': None, 'reparticion': None, 'reparticion_text': None, 'dependencia': None, 'origen_movimiento': None, 'items': None, 'nro_informe': None, 'fecha_informe': None, 'observacion': None, 'cont_informe': None, 'sub_total': None, 'iva': None, 'totales': None, 'cuenta': None, 'id': None}
+2023-12-30 16:49:28 | DEBUG | Catch errors(){'id': 'fc04'} |  | {}
+2023-12-30 16:49:28 | DEBUG | Catch errors(){'id': 'fc04'}
+2023-12-30 16:50:54 | DEBUG | Catch errors(){'id': 'fc04'}
+  | {}
+2023-12-30 16:50:57 | DEBUG | Catch errors(){'id': 'fc04'} |  | {}
+2023-12-30 16:50:57 | DEBUG | Catch errors(){'id': 'fc04'}
+2023-12-30 16:50:59 | DEBUG | Catch errors(){'id': 'fc04'} |  | {}
+2023-12-30 16:50:59 | DEBUG | Catch errors(){'id': 'fc04'}
+2023-12-30 16:51:24 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:51:24 | DEBUG | Catch errors(){}
+2023-12-30 16:51:28 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:51:28 | DEBUG | Catch errors(){}
+2023-12-30 16:51:28 | INFO | Nuevo id de fc10 es 1 |  | {}
+2023-12-30 16:51:28 | SUCCESS | {'informe': 'fc10', 'numero': 1, 'fecha': '2023-12-30', 'id': None}
+2023-12-30 16:51:28 | SUCCESS | {'informe': 'fc10', 'numero': 1, 'fecha': '2023-12-30', 'id': None} |  | {}
+2023-12-30 16:51:28 | DEBUG | {'informe': 'fc10', 'numero': 1, 'fecha': datetime.date(2023, 12, 30), 'id': 12} |  | {}
+2023-12-30 16:52:27 | DEBUG | Catch errors(){'name': 'fc04'} |  | {}
+2023-12-30 16:52:27 | DEBUG | Catch errors(){'name': 'fc04'}
+2023-12-30 16:52:51 | DEBUG | Catch errors(){'name': 'fc04'}
+2023-12-30 16:52:51 | DEBUG | Catch errors(){'name': 'fc04'} |  | {}
+2023-12-30 16:52:55 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:52:55 | DEBUG | Catch errors(){}
+2023-12-30 16:52:55 | INFO | Ultimo id 1 de fc10 |  | {}
+2023-12-30 16:52:55 | INFO | Ultimo id 1 de fc10
+2023-12-30 16:52:55 | DEBUG | {'informe': 'fc10', 'numero': 2, 'fecha': datetime.date(2023, 12, 30), 'id': 14} |  | {}
+2023-12-30 16:52:56 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:52:56 | INFO | Ultimo id 2 de fc10
+  | {}
+2023-12-30 16:52:56 | DEBUG | {'informe': 'fc10', 'numero': 3, 'fecha': datetime.date(2023, 12, 30), 'id': 16}
+2023-12-30 16:52:56 | DEBUG | {'informe': 'fc10', 'numero': 3, 'fecha': datetime.date(2023, 12, 30), 'id': 16} |  | {}
+2023-12-30 16:52:57 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:52:57 | DEBUG | Catch errors(){}
+2023-12-30 16:52:57 | INFO | Ultimo id 3 de fc10
+2023-12-30 16:52:57 | INFO | Ultimo id 3 de fc10 |  | {}
+2023-12-30 16:52:57 | DEBUG | {'informe': 'fc10', 'numero': 4, 'fecha': datetime.date(2023, 12, 30), 'id': 18}
+2023-12-30 16:52:57 | DEBUG | {'informe': 'fc10', 'numero': 4, 'fecha': datetime.date(2023, 12, 30), 'id': 18} |  | {}
+2023-12-30 16:52:58 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:52:58 | INFO | Ultimo id 4 de fc10 |  | {}
+2023-12-30 16:52:58 | DEBUG | {'informe': 'fc10', 'numero': 5, 'fecha': datetime.date(2023, 12, 30), 'id': 20} |  | {}
+2023-12-30 16:52:58 | DEBUG | Catch errors(){}
+  | {}
+2023-12-30 16:52:58 | INFO | Ultimo id 5 de fc10 |  | {}
+2023-12-30 16:52:58 | INFO | Ultimo id 5 de fc10
+2023-12-30 16:52:58 | DEBUG | {'informe': 'fc10', 'numero': 6, 'fecha': datetime.date(2023, 12, 30), 'id': 22} |  | {}
+2023-12-30 16:52:58 | DEBUG | {'informe': 'fc10', 'numero': 6, 'fecha': datetime.date(2023, 12, 30), 'id': 22}
+2023-12-30 16:52:59 | DEBUG | Catch errors(){}
+  | {}
+2023-12-30 16:52:59 | INFO | Ultimo id 6 de fc10 |  | {}
+2023-12-30 16:52:59 | INFO | Ultimo id 6 de fc10
+2023-12-30 16:52:59 | DEBUG | {'informe': 'fc10', 'numero': 7, 'fecha': datetime.date(2023, 12, 30), 'id': 24} |  | {}
+2023-12-30 16:52:59 | DEBUG | {'informe': 'fc10', 'numero': 7, 'fecha': datetime.date(2023, 12, 30), 'id': 24}
+2023-12-30 16:53:00 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:53:00 | DEBUG | Catch errors(){}
+2023-12-30 16:53:00 | INFO | Ultimo id 7 de fc10 |  | {}
+2023-12-30 16:53:00 | INFO | Ultimo id 7 de fc10
+2023-12-30 16:53:00 | DEBUG | {'informe': 'fc10', 'numero': 8, 'fecha': datetime.date(2023, 12, 30), 'id': 26}
+  | {}
+2023-12-30 16:53:00 | DEBUG | Catch errors(){}
+  | {}
+2023-12-30 16:53:00 | INFO | Ultimo id 8 de fc10
+2023-12-30 16:53:00 | INFO | Ultimo id 8 de fc10 |  | {}
+2023-12-30 16:53:00 | DEBUG | {'informe': 'fc10', 'numero': 9, 'fecha': datetime.date(2023, 12, 30), 'id': 28}
+  | {}
+2023-12-30 16:53:01 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:53:01 | DEBUG | Catch errors(){}
+2023-12-30 16:53:01 | INFO | Ultimo id 9 de fc10
+  | {}
+2023-12-30 16:53:01 | DEBUG | {'informe': 'fc10', 'numero': 10, 'fecha': datetime.date(2023, 12, 30), 'id': 30} |  | {}
+2023-12-30 16:53:01 | DEBUG | {'informe': 'fc10', 'numero': 10, 'fecha': datetime.date(2023, 12, 30), 'id': 30}
+2023-12-30 16:53:02 | DEBUG | Catch errors(){}
+2023-12-30 16:53:02 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:53:02 | INFO | Ultimo id 10 de fc10 |  | {}
+2023-12-30 16:53:02 | DEBUG | {'informe': 'fc10', 'numero': 11, 'fecha': datetime.date(2023, 12, 30), 'id': 32}
+2023-12-30 16:53:02 | DEBUG | {'informe': 'fc10', 'numero': 11, 'fecha': datetime.date(2023, 12, 30), 'id': 32} |  | {}
+2023-12-30 16:53:02 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:53:03 | INFO | Ultimo id 11 de fc10
+  | {}
+2023-12-30 16:53:03 | DEBUG | {'informe': 'fc10', 'numero': 12, 'fecha': datetime.date(2023, 12, 30), 'id': 34}
+  | {}
+2023-12-30 16:53:03 | DEBUG | Catch errors(){}
+  | {}
+2023-12-30 16:53:03 | INFO | Ultimo id 12 de fc10
+2023-12-30 16:53:03 | INFO | Ultimo id 12 de fc10 |  | {}
+2023-12-30 16:53:03 | DEBUG | {'informe': 'fc10', 'numero': 13, 'fecha': datetime.date(2023, 12, 30), 'id': 36} |  | {}
+2023-12-30 16:53:03 | DEBUG | {'informe': 'fc10', 'numero': 13, 'fecha': datetime.date(2023, 12, 30), 'id': 36}
+2023-12-30 16:53:04 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:53:04 | INFO | Ultimo id 13 de fc10
+  | {}
+2023-12-30 16:53:04 | DEBUG | {'informe': 'fc10', 'numero': 14, 'fecha': datetime.date(2023, 12, 30), 'id': 38}
+2023-12-30 16:53:04 | DEBUG | {'informe': 'fc10', 'numero': 14, 'fecha': datetime.date(2023, 12, 30), 'id': 38} |  | {}
+2023-12-30 16:53:05 | DEBUG | Catch errors(){} |  | {}
+2023-12-30 16:53:05 | INFO | Ultimo id 14 de fc10
+  | {}
+2023-12-30 16:53:05 | DEBUG | {'informe': 'fc10', 'numero': 15, 'fecha': datetime.date(2023, 12, 30), 'id': 40} |  | {}
+2023-12-30 16:53:05 | DEBUG | {'informe': 'fc10', 'numero': 15, 'fecha': datetime.date(2023, 12, 30), 'id': 40}
+2023-12-30 16:57:09 | DEBUG | Catch errors(){'name': 'fc04'} |  | {}
+2023-12-30 16:57:09 | DEBUG | Catch errors(){'name': 'fc04'}
+2023-12-30 16:59:51 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 16:59:51 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 16:59:51 | INFO | Ultimo id 15 de fc10
+  | {}
+2023-12-30 16:59:51 | DEBUG | {'informe': 'fc10', 'numero': 16, 'fecha': datetime.date(2023, 12, 30), 'id': 42} |  | {}
+2023-12-30 16:59:51 | DEBUG | {'informe': 'fc10', 'numero': 16, 'fecha': datetime.date(2023, 12, 30), 'id': 42}
+2023-12-30 17:00:00 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:00:00 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:00:15 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:00:15 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:00:15 | DEBUG | Obtiene el contador <built-in function id>
+2023-12-30 17:00:15 | DEBUG | Obtiene el contador <built-in function id> |  | {}
+2023-12-30 17:00:15 | INFO | Ultimo id 16 de fc10 |  | {}
+2023-12-30 17:00:15 | DEBUG | {'informe': 'fc10', 'numero': 17, 'fecha': datetime.date(2023, 12, 30), 'id': 43} |  | {}
+2023-12-30 17:00:15 | DEBUG | {'informe': 'fc10', 'numero': 17, 'fecha': datetime.date(2023, 12, 30), 'id': 43}
+2023-12-30 17:00:15 | ERROR | AttributeError("'int' object has no attribute 'numero'")
+2023-12-30 17:00:15 | ERROR | AttributeError("'int' object has no attribute 'numero'") |  | {}
+2023-12-30 17:00:37 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:00:37 | DEBUG | Obtiene el contador <built-in function id> |  | {}
+2023-12-30 17:00:37 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:00:37 | DEBUG | Obtiene el contador <built-in function id>
+2023-12-30 17:00:37 | INFO | Ultimo id 17 de fc10 |  | {}
+2023-12-30 17:00:37 | DEBUG | {'informe': 'fc10', 'numero': 18, 'fecha': datetime.date(2023, 12, 30), 'id': 44} |  | {}
+2023-12-30 17:00:37 | DEBUG | {'informe': 'fc10', 'numero': 18, 'fecha': datetime.date(2023, 12, 30), 'id': 44}
+2023-12-30 17:00:37 | ERROR | AttributeError("'int' object has no attribute 'numero'")
+  | {}
+2023-12-30 17:01:23 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:01:23 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:01:23 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:01:23 | INFO | Ultimo id 18 de fc10
+2023-12-30 17:01:23 | INFO | Ultimo id 18 de fc10 |  | {}
+2023-12-30 17:01:23 | DEBUG | {'informe': 'fc10', 'numero': 19, 'fecha': datetime.date(2023, 12, 30), 'id': 45} |  | {}
+2023-12-30 17:01:25 | DEBUG | Catch errors(){'name': 'fc10'}
+  | {}
+2023-12-30 17:01:25 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:01:25 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:01:25 | INFO | Ultimo id 19 de fc10 |  | {}
+2023-12-30 17:01:25 | INFO | Ultimo id 19 de fc10
+2023-12-30 17:01:25 | DEBUG | {'informe': 'fc10', 'numero': 20, 'fecha': datetime.date(2023, 12, 30), 'id': 46}
+  | {}
+2023-12-30 17:01:38 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:01:38 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:01:38 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:01:38 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:01:38 | INFO | Ultimo id 20 de fc10
+  | {}
+2023-12-30 17:01:38 | DEBUG | {'informe': 'fc10', 'numero': 21, 'fecha': datetime.date(2023, 12, 30), 'id': 47}
+2023-12-30 17:01:38 | DEBUG | {'informe': 'fc10', 'numero': 21, 'fecha': datetime.date(2023, 12, 30), 'id': 47} |  | {}
+2023-12-30 17:01:41 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:01:41 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:01:41 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:01:41 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:01:41 | INFO | Ultimo id 21 de fc10
+2023-12-30 17:01:41 | INFO | Ultimo id 21 de fc10 |  | {}
+2023-12-30 17:01:41 | DEBUG | {'informe': 'fc10', 'numero': 22, 'fecha': datetime.date(2023, 12, 30), 'id': 48} |  | {}
+2023-12-30 17:01:43 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:01:43 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:01:43 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:01:43 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:01:43 | INFO | Ultimo id 22 de fc10 |  | {}
+2023-12-30 17:01:43 | INFO | Ultimo id 22 de fc10
+2023-12-30 17:01:43 | DEBUG | {'informe': 'fc10', 'numero': 23, 'fecha': datetime.date(2023, 12, 30), 'id': 49} |  | {}
+2023-12-30 17:01:43 | DEBUG | {'informe': 'fc10', 'numero': 23, 'fecha': datetime.date(2023, 12, 30), 'id': 49}
+2023-12-30 17:12:15 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:12:15 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:12:15 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:12:15 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:12:15 | INFO | Ultimo id 23 de fc10 |  | {}
+2023-12-30 17:12:15 | INFO | Ultimo id 23 de fc10
+2023-12-30 17:12:16 | DEBUG | {'informe': 'fc10', 'numero': 24, 'fecha': datetime.date(2023, 12, 30), 'id': 50} |  | {}
+2023-12-30 17:12:16 | DEBUG | {'informe': 'fc10', 'numero': 24, 'fecha': datetime.date(2023, 12, 30), 'id': 50}
+2023-12-30 17:12:23 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:12:23 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:12:23 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:12:23 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:12:23 | INFO | Ultimo id 24 de fc10 |  | {}
+2023-12-30 17:12:23 | DEBUG | {'informe': 'fc10', 'numero': 25, 'fecha': datetime.date(2023, 12, 30), 'id': 51} |  | {}
+2023-12-30 17:12:24 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:12:24 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:12:24 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:12:24 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:12:24 | INFO | Ultimo id 25 de fc10
+  | {}
+2023-12-30 17:12:24 | DEBUG | {'informe': 'fc10', 'numero': 26, 'fecha': datetime.date(2023, 12, 30), 'id': 52}
+2023-12-30 17:12:24 | DEBUG | {'informe': 'fc10', 'numero': 26, 'fecha': datetime.date(2023, 12, 30), 'id': 52} |  | {}
+2023-12-30 17:12:25 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:12:25 | DEBUG | Catch errors(){'name': 'fc10'}
+2023-12-30 17:12:25 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:12:25 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:12:25 | INFO | Ultimo id 26 de fc10
+  | {}
+2023-12-30 17:12:25 | DEBUG | {'informe': 'fc10', 'numero': 27, 'fecha': datetime.date(2023, 12, 30), 'id': 53} |  | {}
+2023-12-30 17:12:25 | DEBUG | {'informe': 'fc10', 'numero': 27, 'fecha': datetime.date(2023, 12, 30), 'id': 53}
+2023-12-30 17:12:26 | DEBUG | Catch errors(){'name': 'fc10'} |  | {}
+2023-12-30 17:12:26 | DEBUG | Obtiene el contador fc10
+2023-12-30 17:12:26 | DEBUG | Obtiene el contador fc10 |  | {}
+2023-12-30 17:12:26 | INFO | Ultimo id 27 de fc10 |  | {}
+2023-12-30 17:12:26 | INFO | Ultimo id 27 de fc10
+2023-12-30 17:12:26 | DEBUG | {'informe': 'fc10', 'numero': 28, 'fecha': datetime.date(2023, 12, 30), 'id': 54} |  | {}
+2023-12-30 17:12:26 | DEBUG | {'informe': 'fc10', 'numero': 28, 'fecha': datetime.date(2023, 12, 30), 'id': 54}
