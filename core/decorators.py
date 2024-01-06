@@ -16,7 +16,7 @@ def catch_errors(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         try:
-            logger.debug("Catch errors" + str(args) + str(kwargs))
+            logger.debug(f"debug: " + str(args) + str(kwargs))
             return f(*args, **kwargs)
         except SQLAlchemyError as e:
             logger.error(repr(e))

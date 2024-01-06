@@ -4,6 +4,7 @@ import json
 from builtins import issubclass
 
 from api_v2.models import ModelBase
+from api_v2.loggers import logger
 
 
 class CustomJsonEncoder(json.JSONEncoder):
@@ -22,5 +23,8 @@ class CustomJsonEncoder(json.JSONEncoder):
             return obj.as_dict()
         elif isinstance(obj, Exception):
             return repr(obj)
+        elif isinstance(obj, str) and (obj.startswith("[") or obj.startswith("{")):
+            logger.debug(f'detected json: {obj}')
+            return json.loads(obj)
 
         return json.JSONEncoder.default(self, obj)

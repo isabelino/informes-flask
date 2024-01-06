@@ -20,7 +20,8 @@ services:
       - database:/var/lib/mysql
 
   aplication:
-    image: senave_backend_v2
+    build:
+      context: .
     container_name: senave_aplication
     restart: always
     ports:

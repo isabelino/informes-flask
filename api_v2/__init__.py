@@ -20,7 +20,6 @@ api_v2.add_url_rule('/v2/fc03/new', view_func=FC03Service.as_view('fc03'))
 api_v2.add_url_rule('/v2/fc03/all', view_func=FC03ListService.as_view('fc03_all'))
 api_v2.add_url_rule('/v2/fc03/date/<date>', view_func=FC03ByDateService.as_view('fc03_by_date'))
 # ----------------------------------------------------------------------------------------------------------------
-# api_v2.add_url_rule('/v2/fc04', view_func=FC04Service.as_view('fc04'))
 api_v2.add_url_rule('/v2/fc04/new', view_func=FC04Service.as_view('fc04_new'))
 api_v2.add_url_rule('/v2/fc04/items', view_func=FC04ItemsService.as_view('fc04_items'))
 api_v2.add_url_rule('/v2/fc04/all', view_func=FC04ListService.as_view('fc04_all'))

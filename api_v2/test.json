@@ -1,0 +1,38 @@
+[
+  {
+    "cuenta": "26112",
+    "subcuenta": "\n 03",
+    "analitico1": "\n \n 99",
+    "analitico2": "04",
+    "descripcion": "Muebles y enseres \nequipos de eseo y seguridad\nOtros equipos y mubles de AHS\nOtros tipos de enceradoras electricas\nAPARATO DIFUSOR SPHIRUS{11648}",
+    "fecha_adquisicion": "01-10-2019",
+    "tipo": "factura",
+    "nro": "01",
+    "rotulado": "18-6-3-1224",
+    "cantidad": "1",
+    "valor_unitario": "59.091",
+    "valor_total": "59.091",
+    "signo": "signo",
+    "fecha_incorp": "10-10-2019",
+    "vida_util": "10",
+    "origen_movimento": "C"
+  },
+  {
+    "cuenta": "26112",
+    "subcuenta": "\n 03",
+    "analitico1": "\n \n 99",
+    "analitico2": "04",
+    "descripcion": "Muebles y enseres \nequipos de eseo y seguridad\nOtros equipos y mubles de AHS\nOtros tipos de enceradoras electricas\nAPARATO DIFUSOR SPHIRUS{11648}",
+    "fecha_adquisicion": "01-10-2019",
+    "tipo": "factura",
+    "nro": "01",
+    "rotulado": "18-6-3-1224",
+    "cantidad": "1",
+    "valor_unitario": "59.091",
+    "valor_total": "59.091",
+    "signo": "signo",
+    "fecha_incorp": "10-10-2019",
+    "vida_util": "10",
+    "origen_movimento": "C"
+  }
+]

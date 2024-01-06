@@ -80,7 +80,7 @@ class ModelFC03(ModelBase):
 
 class ModelFC04(ModelBase):
     __tablename__ = 'informe_fc04'
-    # __table_args__.update({'comment': 'Informe de la FC04'})
+    __table_args__ = {'comment': 'Informe de la FC04'}
     unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
     entidad = Column(VARCHAR(150), nullable=True, comment='Entidad')
     entidad_text = Column(VARCHAR(150), nullable=True, comment='Entidad')
@@ -89,13 +89,13 @@ class ModelFC04(ModelBase):
     dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
     origen_movimiento = Column(VARCHAR(150), nullable=True, comment='Origen del movimiento')
     items = Column(JSON(True), nullable=True, comment='Items')
-    nro_informe = Column(INTEGER, nullable=True, comment='Numero del informe')
-    fecha_informe = Column(DATE, nullable=True, comment='Fecha del informe')
+    nro_informe = Column(VARCHAR(150), nullable=True, comment='Numero del informe')
+    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
     observacion = Column(VARCHAR(10000), nullable=True, comment='Observacion')
     cont_informe = Column(INTEGER, nullable=True, comment='Contador del informe')
-    sub_total = Column(DECIMAL(10, 2), nullable=True, comment='Sub total')
-    iva = Column(DECIMAL(10, 2), nullable=True, comment='IVA')
-    totales = Column(DECIMAL(10, 2), nullable=True, comment='Totales')
+    sub_total = Column(VARCHAR(50), nullable=True, comment='Sub total')
+    iva = Column(VARCHAR(150), nullable=True, comment='IVA')
+    totales = Column(VARCHAR(150), nullable=True, comment='Totales')
     cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
 
 
