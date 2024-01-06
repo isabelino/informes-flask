@@ -11,6 +11,8 @@ from services_info.models import *
 class Routes:
     def __init__(self, app):
 
+        VERSION = "v1.0"
+
         @app.route("/")
         def init_api():
             """
@@ -562,6 +564,7 @@ class Routes:
 
         @app.route(f"/api/{VERSION}/update/<int:id>", methods=["PUT"])
         def update(id):
+            """actualizar un registro"""
             registro = request.json
             try:
                 update_by(id, [registro['date'], registro['concept'], registro['quantity']])
@@ -580,6 +583,7 @@ class Routes:
 
         @app.route(f"/api/{VERSION}/delete/<int:id>", methods=["DELETE"])
         def remove(id):
+            """remover un registro"""
             try:
                 delete_by(id)
                 return jsonify(

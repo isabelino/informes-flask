@@ -5,11 +5,11 @@ from flask.views import MethodView
 from sqlalchemy.exc import DatabaseError
 
 from api_v2.conexion import repo_session
+from api_v2.loggers import logger
 from api_v2.models import ModelFC10
 from core.decorators import catch_errors
-from core.generators import last_id
+from core.generators import last_report_id
 from core.responses import make_response
-from api_v2.loggers import logger
 
 
 class FC10Service(MethodView):
@@ -21,7 +21,7 @@ class FC10Service(MethodView):
         model = ModelFC10()
         model.from_dict(data)
         model.fecha = datetime.date.today().isoformat()
-        model.numero = last_id("fc10")
+        model.numero = last_report_id("fc10")
 
         with repo_session() as s:
             try:

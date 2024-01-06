@@ -8,7 +8,7 @@ from sqlalchemy.exc import DatabaseError
 from api_v2.conexion import repo_session
 from api_v2.loggers import logger
 from api_v2.models import ModelFC04
-from core.generators import last_id
+from core.generators import last_report_id
 from core.responses import make_response
 
 
@@ -21,7 +21,7 @@ class FC04Service(MethodView):
 
         model = ModelFC04()
         model.from_dict(data)
-        model.numero = last_id("fc04")
+        model.numero = last_report_id("fc04")
         model.fecha = datetime.date.today().isoformat()
 
         items = [{'cuenta': '26112',

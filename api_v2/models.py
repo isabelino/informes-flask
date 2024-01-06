@@ -1,7 +1,8 @@
 from sqlalchemy import *
 from sqlalchemy.orm import *
 
-__all__ = ['ModelBase', 'ModelContadores', 'ModelFC03', 'ModelFC04', 'ModelFC05', 'ModelFC06', 'ModelFC10']
+__all__ = ['ModelBase', 'ModelContadores', 'ModelFC03', 'ModelFC04', 'ModelFC05', 'ModelFC06', 'ModelFC10',
+           'ModelMovement']
 
 
 class ModelBaseClass:
@@ -101,18 +102,22 @@ class ModelFC04(ModelBase):
 
 class ModelFC05(ModelBase):
     __tablename__ = 'informe_fc05'
-    # __table_args__.update({'comment': 'Informe de la FC05'})
-    fecha = Column(DATE, nullable=False, comment='Fecha')
-    cuenta = Column(VARCHAR(150), nullable=False, comment='Cuenta')
-    nombre_cuenta = Column(VARCHAR(150), nullable=False, comment='Nombre de la cuenta')
-    valor_unitario = Column(DECIMAL(10, 2), nullable=False, comment='Valor unitario')
-    origen = Column(VARCHAR(150), nullable=False, comment='Origen')
-    saldo = Column(DECIMAL(10, 2), nullable=False, comment='Saldo')
-    total = Column(DECIMAL(10, 2), nullable=False, comment='Total')
-    numero_informe = Column(INTEGER, nullable=False, comment='Numero del informe')
-    fecha_informe = Column(DATE, nullable=False, comment='Fecha del informe')
-    month = Column(INTEGER, nullable=False, comment='Mes')
-    year = Column(INTEGER, nullable=False, comment='Año')
+    __table_args__ = {'comment': 'Informe de la FC05'}
+    fecha = Column(VARCHAR(50), nullable=True, comment='Fecha')
+    cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
+    nombre_cuenta = Column(VARCHAR(150), nullable=True, comment='Nombre de la cuenta')
+    valor_unitario = Column(DECIMAL(10, 2), nullable=True, comment='Valor unitario')
+    origen = Column(VARCHAR(150), nullable=True, comment='Origen')
+    saldo = Column(DECIMAL(10, 2), nullable=True, comment='Saldo')
+    total = Column(DECIMAL(10, 2), nullable=True, comment='Total')
+    numero_informe = Column(INTEGER, nullable=True, comment='Numero del informe')
+    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
+    month = Column(VARCHAR(10), nullable=True, comment='Mes')
+    year = Column(VARCHAR(10), nullable=True, comment='Año')
+
+    @validates("nombre_cuenta")
+    def validates_nombre_cuenta(self, key, nombre_cuenta):
+        return nombre_cuenta.replace('  ', ' ')
 
 
 class ModelFC06(ModelBase):
@@ -153,3 +158,11 @@ class ModelFC10(ModelBase):
     cont_informe = Column(INTEGER, nullable=False, comment='Contador del informe')
     cuenta = Column(VARCHAR(150), nullable=False, comment='Cuenta')
     total = Column(DECIMAL(10, 2), nullable=False, comment='Total')
+
+
+class ModelMovement(ModelBase):
+    __tablename__ = 'movements'
+    __table_args__ = {'comment': 'Movimientos'}
+    date = Column(DATE, nullable=False, comment='Fecha')
+    concept = Column(VARCHAR(150), nullable=False, comment='Concepto')
+    quantity = Column(DECIMAL(10, 2), nullable=False, comment='Cantidad')

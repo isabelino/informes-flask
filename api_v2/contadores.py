@@ -8,7 +8,7 @@ from api_v2.conexion import repo_session
 from api_v2.loggers import logger
 from api_v2.models import ModelContadores
 from core.decorators import catch_errors
-from core.generators import last_id
+from core.generators import last_report_id
 from core.responses import make_response
 
 
@@ -20,7 +20,7 @@ class ContadorService(MethodView):
 
     def get(self, name: str):
         logger.debug(f'Obtiene el contador {name}')
-        contador = last_id(name)
+        contador = last_report_id(name)
         return make_response(contador)
 
 
@@ -39,7 +39,7 @@ class ContadorLastIdService(MethodView):
             return make_response(contador)
 
     def post(self, name):
-        contador = last_id(name)
+        contador = next_report_id(name)
         return make_response(contador)
 
 
@@ -60,7 +60,7 @@ class ContadoresService(MethodView):
         model.fecha = datetime.date.today().isoformat()
 
         with repo_session() as s:
-            model.numero = last_id(model.informe)
+            model.numero = last_report_id(model.informe)
 
             s.add(model)
             s.commit()

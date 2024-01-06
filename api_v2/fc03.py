@@ -7,7 +7,7 @@ from sqlalchemy.exc import DatabaseError
 from api_v2.conexion import repo_session
 from api_v2.models import ModelFC03
 from core.decorators import catch_errors
-from core.generators import last_id
+from core.generators import last_report_id
 from core.responses import make_response
 from .loggers import logger
 
@@ -22,7 +22,7 @@ class FC03Service(MethodView):
         model = ModelFC03()
         model.from_dict(data)
         model.fecha = datetime.date.today().isoformat()
-        model.numero = last_id("fc03")
+        model.numero = last_report_id("fc03")
         logger.warning(f'generado numero {model.numero}', extra=model.as_dict())
         # model.items = [{'cuenta': '26112', 'subcuenta': '1', 'analitico1': '9', 'analitico2': '99',
         #                 'descripcion': "Muebles y enseres \nmobiliarios y enseres de oficina \nEscritorios \notros tipos de escritorio\nMESA DE MADERA CLASSIC MOBLES {10643}",

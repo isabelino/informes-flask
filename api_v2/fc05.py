@@ -1,25 +1,32 @@
+import datetime
+
+from flask import request
 from flask.views import MethodView
+from sqlalchemy.exc import DatabaseError
 
 from api_v2.conexion import repo_session
 from api_v2.models import ModelFC05
 from core.decorators import catch_errors
+from core.generators import last_report_id
 from core.responses import make_response
 
 
 class FC05Service(MethodView):
     decorators = [catch_errors]
 
-    def get(self):
-        with repo_session() as s:
-            lista = s.query(ModelFC05).all()
-            return make_response([item.as_dict() for item in lista])
+    # def get(self):
+    #     with repo_session() as s:
+    #         lista = s.query(ModelFC05).all()
+    #         return make_response([item.as_dict() for item in lista])
 
     def post(self):
+        from api_v2.loggers import logger
         data = request.get_json()
+        logger.warning(data)
         model = ModelFC05()
         model.from_dict(data)
         model.fecha = datetime.date.today().isoformat()
-        model.numero = last_id("fc05")
+        model.numero = last_report_id("fc05")
 
         with repo_session() as s:
             try:

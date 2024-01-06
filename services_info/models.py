@@ -64,6 +64,7 @@ def select_all_contador():
 
 
 def insert_contador(registro):
+    """Registrar el contador"""
     connectInsert = Conexion("insert into contadores(informe,numero,fecha) values(?,?,?)", registro)
     connectInsert.con.commit()  # funcion que registra finalmente
     connectInsert.con.close()
@@ -358,20 +359,24 @@ def insert_informe_fc06(registro):
     connectInsertfc06.con.close()
 
 
-def select_contador_by(num):
-    connectSelectBy = Conexion(f'SELECT numero from contadores WHERE informe="{num}" ORDER BY numero DESC LIMIT 1;')
+def select_contador_by(informe_tag):
+    """seleccionar el ultimo valor de un contador"""
+    connectSelectBy = Conexion(
+        f'SELECT numero from contadores WHERE informe="{informe_tag}" ORDER BY numero DESC LIMIT 1;')
     resultado = connectSelectBy.res.fetchall()
     connectSelectBy.con.close()
     return resultado
 
 
 def delete_by(id):
+    """Borrar movimientos"""
     connectDeleteBy = Conexion(f"delete from movements where id={id}")
     connectDeleteBy.con.commit()
     connectDeleteBy.con.close()
 
 
 def update_by(id, registro):  # ['date','concept','quantity']
+    """Actualizar movimientos"""
     connectUpdate = Conexion(f"UPDATE movements SET date=?,concept=?,quantity=? WHERE id={id}", registro)
     connectUpdate.con.commit()
     connectUpdate.con.close()
