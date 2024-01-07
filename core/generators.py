@@ -23,18 +23,18 @@ def last_report_id(informe_name: str) -> int:
 
         value = 0 if obj is None else obj.numero
 
-        # save position
-        obj = ModelContadores()
-        obj.informe = informe_name
-        obj.fecha = datetime.date.today().isoformat()
-        obj.numero = value + 1
-        s.add(obj)
-        s.commit()
+        # # save position
+        # obj = ModelContadores()
+        # obj.informe = informe_name
+        # obj.fecha = datetime.date.today().isoformat()
+        # obj.numero = value + 1
+        # s.add(obj)
+        # s.commit()
 
         return value
 
 
-def post_report_id(informe_name: str, value: int):
+def set_report_id(informe_name: str, value: int):
     """
     Registrar el siguiente id del informe especificado
     :param informe_name:

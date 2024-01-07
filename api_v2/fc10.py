@@ -21,6 +21,7 @@ class FC10Service(MethodView):
         model.fecha = current_date()
         model.fecha_informe = current_date()
         model.numero = last_report_id("fc10")
+        model.cont_informe = model.numero
 
         with repo_session() as s:
             try:
@@ -37,4 +38,4 @@ class FC10ListService(MethodView):
     def get(self):
         with repo_session() as s:
             lista = s.query(ModelFC10).order_by(ModelFC10.id.desc()).all()
-        return make_response([item.as_dict() for item in lista])
+        return make_response(lista)
