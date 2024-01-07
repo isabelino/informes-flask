@@ -116,8 +116,10 @@ class ModelFC05(ModelBase):
     year = Column(VARCHAR(10), nullable=True, comment='Año')
 
     @validates("nombre_cuenta")
-    def validates_nombre_cuenta(self, key, nombre_cuenta):
-        return nombre_cuenta.replace('  ', ' ')
+    def validates_nombre_cuenta(self, key, value):
+        if isinstance(value, str):
+            value = value.upper()
+        return value.replace('  ', ' ')
 
 
 class ModelFC06(ModelBase):
