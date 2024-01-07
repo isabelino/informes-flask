@@ -1,5 +1,3 @@
-import datetime
-
 from flask import request
 from flask.views import MethodView
 from sqlalchemy.exc import DatabaseError
@@ -8,7 +6,7 @@ from api_v2.conexion import repo_session
 from api_v2.loggers import logger
 from api_v2.models import ModelFC10
 from core.decorators import catch_errors
-from core.generators import last_report_id
+from core.generators import last_report_id, current_date
 from core.responses import make_response
 
 
@@ -20,7 +18,8 @@ class FC10Service(MethodView):
         logger.success(data)
         model = ModelFC10()
         model.from_dict(data)
-        model.fecha = datetime.date.today().isoformat()
+        model.fecha = current_date()
+        model.fecha_informe = current_date()
         model.numero = last_report_id("fc10")
 
         with repo_session() as s:

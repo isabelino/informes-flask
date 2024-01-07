@@ -8,9 +8,7 @@ from api_v2.loggers import logger
 
 def catch_errors(f):
     """
-    Decorador para captura de errores de SQLAlchemy
-    :param f:
-    :return:
+    Decorador para captura de errores de SQLAlchemy y atributos
     """
 
     @wraps(f)
@@ -20,9 +18,13 @@ def catch_errors(f):
             return f(*args, **kwargs)
         except SQLAlchemyError as e:
             logger.error(repr(e))
-            return jsonify({"data": e, "status": "Error"}), 400
+            return jsonify({"data": str(e), "status": "Error"}), 400
         except AttributeError as e:
             logger.error(repr(e))
-            return jsonify({"data": repr(e), "status": "Error"}), 400
+            return jsonify({"data": str(e), "status": "Error"}), 400
+        except Exception as e:
+            # Captura cualquier otra excepción no especificada anteriormente
+            logger.error(repr(e))
+            return jsonify({"data": str(e), "status": "Error"}), 400
 
     return decorated_function

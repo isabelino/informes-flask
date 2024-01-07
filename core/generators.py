@@ -48,3 +48,7 @@ def post_report_id(informe_name: str, value: int):
         obj.numero = value
         s.add(obj)
         s.commit()
+
+
+def current_date() -> str:
+    return datetime.date.today().strftime('%d-%m-%Y')

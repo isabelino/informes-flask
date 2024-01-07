@@ -13,7 +13,7 @@ SWAGGER_URL = "/swagger"
 API_URL = "/static/swagger.json"
 
 # registro del blueprint api_v2
-app.register_blueprint(api_v2, url_prefix='/api')
+app.register_blueprint(api_v2, url_prefix='/api/v2/')
 
 # registro del blueprint swagger
 swagger_ui_blueprint = get_swaggerui_blueprint(

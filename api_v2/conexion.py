@@ -1,7 +1,7 @@
 import contextlib
 import os
 
-from sqlalchemy import create_engine, MetaData, NullPool, text
+from sqlalchemy import create_engine, MetaData, NullPool, text, TextClause
 from sqlalchemy.orm import sessionmaker
 
 
@@ -25,22 +25,28 @@ class Database:
     def select_database(self, db: str) -> None:
         """Selecciona la base de datos"""
         self.database = db
-        self.execute(f'use {db.strip().lower()}')
+        self.execute(text(f'use {db.strip().lower()}'))
 
-    def execute(self, query: str, **kwargs):
+    def get_connection(self):
+        """raw connection"""
+        return self.cn
+
+    def execute(self, query: TextClause, **kwargs):
+        from api_v2.loggers import logger
         """Ejecuta una consulta y devuelve un cursor"""
         # done: validar que la consulta no sea una consulta de selección
-        return self.cn.execute(text(query), **kwargs)
+        logger.debug(f"{query}", **kwargs)
+        return self.cn.execute(query, **kwargs)
 
-    def fetch_all(self, query: str, **kwargs):
+    def fetch_all(self, query: TextClause, **kwargs):
         """Devuelve una lista de tuplas"""
         return self.execute(query, **kwargs).fetchall()
 
-    def fetch_one(self, query: str, **kwargs):
+    def fetch_one(self, query: TextClause, **kwargs):
         """Devuelve una tupla"""
         return self.execute(query, **kwargs).fetchone()
 
-    def fetch_scalar(self, query: str, **kwargs):
+    def fetch_scalar(self, query: TextClause, **kwargs):
         """Devuelve un valor escalar"""
         return self.execute(query, **kwargs).scalar()
 
@@ -114,6 +120,7 @@ def repo():
     # d.select_database('dr2gsistemas_market')
     yield d
     d.cn.close()
+
 
 @contextlib.contextmanager
 def repo_session():

@@ -122,10 +122,10 @@ class Routes:
                     }
                 ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
 
-        @app.route(f"/api/{VERSION}/fc06/items/<y>")
-        def fc06_items(y):
+        @app.route(f"/api/{VERSION}/fc06/items/<year>")
+        def fc06_items(year):
             try:
-                registros = select_informe_fc06_items(y)
+                registros = select_informe_fc06_items(year)
                 # return jsonify(registros)
                 return jsonify(
                     {

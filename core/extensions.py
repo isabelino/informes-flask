@@ -1,22 +1,27 @@
 from typing import Protocol
 
+from sqlalchemy import CursorResult, TextClause
+
+from api_v2.conexion import Database
+
 
 class ScriptObject(Protocol):
 
-    def __init__(self):
+    def __init__(self, db: Database):
         self.result = None
+        self.db = db
 
-    def script(self) -> str:
+    def script(self) -> TextClause:
         ...
 
-    def execute(self, db, **params):
-        self.result = db.execute(self.script(), **params)
+    def __execute(self, **kwargs) -> CursorResult:
+        return self.db.execute(self.script(), **kwargs)
 
-    def fetch_all(self):
-        return self.result.fetchall()
+    def fetch_all(self, **kwargs):
+        return self.__execute(**kwargs).fetchall()
 
-    def fetch_one(self):
-        return self.result.fetchone()
+    def fetch_one(self, **kwargs):
+        return self.__execute(**kwargs).fetchone()
 
-    def fetch_scalar(self):
-        return self.result.scalar()
+    def fetch_scalar(self, **kwargs):
+        return self.__execute(**kwargs).scalar()

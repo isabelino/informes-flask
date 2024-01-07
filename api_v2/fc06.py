@@ -1,8 +1,15 @@
+import datetime
+
+from flask import request
 from flask.views import MethodView
+from sqlalchemy.exc import DatabaseError
 
 from api_v2.conexion import repo, repo_session
+from api_v2.models import ModelFC06
 from api_v2.scripts import Informe06ItemsScript
 from core.decorators import catch_errors
+from core.generators import last_report_id
+from core.responses import make_response
 
 
 class FC06Service(MethodView):
@@ -16,7 +23,7 @@ class FC06Service(MethodView):
         model = ModelFC06()
         model.from_dict(data)
         model.fecha = datetime.date.today().isoformat()
-        model.numero = last_id("fc06")
+        model.numero = last_report_id("fc06")
 
         with repo_session() as s:
             try:
@@ -32,8 +39,11 @@ class FC06Service(MethodView):
 class FC06ItemsService(MethodView):
     decorators = [catch_errors]
 
-    def get(self, year: int):
-        with repo() as db:
-            lista = Informe06ItemsScript().execute(db, year=year).fetch_all()
+    def get(self, year):
+        from api_v2.loggers import logger
 
-        return make_response([item.as_dict() for item in lista])
+        logger.debug(f"{__name__} {year}")
+        with repo() as db:
+            lista = Informe06ItemsScript(db).fetch_all(year=year)
+
+            return make_response(lista)
