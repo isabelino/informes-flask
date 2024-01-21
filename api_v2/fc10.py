@@ -6,7 +6,7 @@ from api_v2.conexion import repo_session
 from api_v2.loggers import logger
 from api_v2.models import ModelFC10
 from core.decorators import catch_errors
-from core.generators import last_report_id, current_date
+from core.generators import last_report_id, current_date, set_report_id
 from core.responses import make_response
 
 
@@ -23,6 +23,8 @@ class FC10Service(MethodView):
         model.numero = last_report_id("fc10")
         model.cont_informe = model.numero
 
+        set_report_id("fc10", model.numero + 1)
+
         with repo_session() as s:
             try:
                 s.add(model)
@@ -35,6 +37,8 @@ class FC10Service(MethodView):
 
 
 class FC10ListService(MethodView):
+    decorators = [catch_errors]
+
     def get(self):
         with repo_session() as s:
             lista = s.query(ModelFC10).order_by(ModelFC10.id.desc()).all()

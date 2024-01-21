@@ -45,74 +45,75 @@ class ModelContadores(ModelBase):
 
 class ModelFC03(ModelBase):
     __tablename__ = 'informe_fc03'
-    # __table_args__.update({'comment': 'Informe de la FC03'})
-    entidad = Column(VARCHAR(150), nullable=True, comment='Entidad')
-    unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
-    reparticion = Column(VARCHAR(150), nullable=True, comment='Reparticion')
-    dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
-    area = Column(VARCHAR(150), nullable=True, comment='Area')
-    origen = Column(VARCHAR(150), nullable=True, comment='Origen')
-    cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
-    sub_cuenta = Column(VARCHAR(150), nullable=True, comment='Sub cuenta')
     analitico_1 = Column(VARCHAR(150), nullable=True, comment='Analitico 1')
     analitico_2 = Column(VARCHAR(150), nullable=True, comment='Analitico 2')
-    descripcion = Column(VARCHAR(150), nullable=True, comment='Descripcion')
-    fecha = Column(DATE, nullable=True, comment='Fecha')
-    tipo = Column(VARCHAR(150), nullable=True, comment='Tipo')
-    numero = Column(VARCHAR(150), nullable=True, comment='Numero')
-    rotulado = Column(VARCHAR(150), nullable=True, comment='Rotulado')
+    area = Column(VARCHAR(150), nullable=True, comment='Area')
     cantidad = Column(DECIMAL(10, 2), nullable=True, comment='Cantidad')
-    valor_unitario = Column(DECIMAL(10, 2), nullable=True, comment='Valor unitario')
-    valor_total = Column(DECIMAL(10, 2), nullable=True, comment='Valor total')
-    signo = Column(VARCHAR(150), nullable=True, comment='Signo')
-    fecha_incorp = Column(DATE, nullable=True, comment='Fecha de incorporacion')
-    vida_util = Column(INTEGER, nullable=True, comment='Vida util')
-    origen_movi = Column(VARCHAR(150), nullable=True, comment='Origen del movimiento')
-    sub_total = Column(DECIMAL(10, 2), nullable=True, comment='Sub total')
-    iva = Column(DECIMAL(10, 2), nullable=True, comment='IVA')
-    totales = Column(DECIMAL(10, 2), nullable=True, comment='Totales')
-    numero_informe = Column(INTEGER, nullable=True, comment='Numero del informe')
-    fecha_informe = Column(DATE, nullable=True, comment='Fecha del informe')
-    item = Column(JSON(True), nullable=True, comment='Items')
-    reparticion_cod = Column(VARCHAR(150), nullable=True, comment='Codigo de la reparticion')
-    dependencia_cod = Column(VARCHAR(150), nullable=True, comment='Codigo de la dependencia')
     cont_informe = Column(INTEGER, nullable=True, comment='Contador del informe')
+    cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
+    dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
+    dependencia_cod = Column(VARCHAR(150), nullable=True, comment='Codigo de la dependencia')
+    descripcion = Column(VARCHAR(150), nullable=True, comment='Descripcion')
+    entidad = Column(VARCHAR(150), nullable=True, comment='Entidad')
+    fecha = Column(DATE, nullable=True, comment='Fecha')
+    fecha_incorp = Column(DATE, nullable=True, comment='Fecha de incorporacion')
+    fecha_informe = Column(DATE, nullable=True, comment='Fecha del informe')
+    items = Column(JSON(True), nullable=True, comment='Items')
+    iva = Column(DECIMAL(10, 2), nullable=True, comment='IVA')
+    numero = Column(VARCHAR(150), nullable=True, comment='Numero')
+    numero_informe = Column(INTEGER, nullable=True, comment='Numero del informe')
+    origen = Column(VARCHAR(150), nullable=True, comment='Origen')
+    origen_movi = Column(VARCHAR(150), nullable=True, comment='Origen del movimiento')
+    reparticion = Column(VARCHAR(150), nullable=True, comment='Reparticion')
+    # reparticion_cod = Column(VARCHAR(150), nullable=True, comment='Codigo de la reparticion')
+    rotulado = Column(VARCHAR(150), nullable=True, comment='Rotulado')
+    signo = Column(VARCHAR(150), nullable=True, comment='Signo')
+    sub_cuenta = Column(VARCHAR(150), nullable=True, comment='Sub cuenta')
+    sub_total = Column(DECIMAL(10, 2), nullable=True, comment='Sub total')
+    tipo = Column(VARCHAR(150), nullable=True, comment='Tipo')
+    totales = Column(DECIMAL(10, 2), nullable=True, comment='Totales')
+    unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
+    valor_total = Column(DECIMAL(10, 2), nullable=True, comment='Valor total')
+    valor_unitario = Column(DECIMAL(10, 2), nullable=True, comment='Valor unitario')
+    vida_util = Column(INTEGER, nullable=True, comment='Vida util')
+    reparticion_cod = Column(VARCHAR(150), nullable=True, comment='Codigo de la reparticion')
 
 
 class ModelFC04(ModelBase):
-    __tablename__ = 'informe_fc04'
     __table_args__ = {'comment': 'Informe de la FC04'}
-    unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
+    __tablename__ = 'informe_fc04'
+    cont_informe = Column(INTEGER, nullable=True, comment='Contador del informe')
+    cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
+    dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
     entidad = Column(VARCHAR(150), nullable=True, comment='Entidad')
     entidad_text = Column(VARCHAR(150), nullable=True, comment='Entidad')
+    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
+    items = Column(JSON(True), nullable=True, comment='Items')
+    itemsfc05 = Column(JSON(True), nullable=True, comment='Itemsfc05')
+    iva = Column(VARCHAR(150), nullable=True, comment='IVA')
+    nro_informe = Column(VARCHAR(150), nullable=True, comment='Numero del informe')
+    observacion = Column(VARCHAR(10000), nullable=True, comment='Observacion')
+    origen_movimiento = Column(VARCHAR(150), nullable=True, comment='Origen del movimiento')
     reparticion = Column(VARCHAR(150), nullable=True, comment='Reparticion')
     reparticion_text = Column(VARCHAR(150), nullable=True, comment='Reparticion')
-    dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
-    origen_movimiento = Column(VARCHAR(150), nullable=True, comment='Origen del movimiento')
-    items = Column(JSON(True), nullable=True, comment='Items')
-    nro_informe = Column(VARCHAR(150), nullable=True, comment='Numero del informe')
-    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
-    observacion = Column(VARCHAR(10000), nullable=True, comment='Observacion')
-    cont_informe = Column(INTEGER, nullable=True, comment='Contador del informe')
-    sub_total = Column(VARCHAR(50), nullable=True, comment='Sub total')
-    iva = Column(VARCHAR(150), nullable=True, comment='IVA')
+    sub_total = Column(VARCHAR(150), nullable=True, comment='Sub total')
     totales = Column(VARCHAR(150), nullable=True, comment='Totales')
-    cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
+    unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
 
 
 class ModelFC05(ModelBase):
     __tablename__ = 'informe_fc05'
     __table_args__ = {'comment': 'Informe de la FC05'}
-    fecha = Column(VARCHAR(50), nullable=True, comment='Fecha')
     cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
+    fecha = Column(VARCHAR(50), nullable=True, comment='Fecha')
+    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
+    month = Column(VARCHAR(10), nullable=True, comment='Mes')
     nombre_cuenta = Column(VARCHAR(150), nullable=True, comment='Nombre de la cuenta')
-    valor_unitario = Column(DECIMAL(10, 2), nullable=True, comment='Valor unitario')
+    numero_informe = Column(INTEGER, nullable=True, comment='Numero del informe')
     origen = Column(VARCHAR(150), nullable=True, comment='Origen')
     saldo = Column(DECIMAL(10, 2), nullable=True, comment='Saldo')
     total = Column(DECIMAL(10, 2), nullable=True, comment='Total')
-    numero_informe = Column(INTEGER, nullable=True, comment='Numero del informe')
-    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
-    month = Column(VARCHAR(10), nullable=True, comment='Mes')
+    valor_unitario = Column(DECIMAL(10, 2), nullable=True, comment='Valor unitario')
     year = Column(VARCHAR(10), nullable=True, comment='Año')
 
     @validates("nombre_cuenta")
@@ -120,6 +121,12 @@ class ModelFC05(ModelBase):
         if isinstance(value, str):
             value = value.upper()
         return value.replace('  ', ' ')
+
+    def validate_fecha(self, value):
+        if isinstance(value, str):
+            if value == '':
+                return None
+        return value
 
 
 class ModelFC06(ModelBase):
@@ -145,21 +152,21 @@ class ModelFC06(ModelBase):
 class ModelFC10(ModelBase):
     __tablename__ = 'informe_fc10'
     # __table_args__.update({'comment': 'Informe de la FC10'})
-    entidad = Column(VARCHAR(150), nullable=True, comment='Entidad')
-    entidad_text = Column(VARCHAR(150), nullable=True, comment='Entidad')
-    unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
-    reparticion = Column(VARCHAR(150), nullable=True, comment='Reparticion')
-    reparticion_text = Column(VARCHAR(150), nullable=True, comment='Reparticion')
-    dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
-    dependencia_text = Column(VARCHAR(150), nullable=True, comment='Dependencia')
-    responsable = Column(VARCHAR(150), nullable=True, comment='Responsable')
     cargo = Column(VARCHAR(150), nullable=True, comment='Cargo')
-    items = Column(JSON(True), nullable=True, comment='Items')
-    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
-    numero_informe = Column(VARCHAR(150), nullable=True, comment='Numero del informe')
     cont_informe = Column(INTEGER, nullable=True, comment='Contador del informe')
     cuenta = Column(VARCHAR(150), nullable=True, comment='Cuenta')
+    dependencia = Column(VARCHAR(150), nullable=True, comment='Dependencia')
+    dependencia_text = Column(VARCHAR(150), nullable=True, comment='Dependencia')
+    entidad = Column(VARCHAR(150), nullable=True, comment='Entidad')
+    entidad_text = Column(VARCHAR(150), nullable=True, comment='Entidad')
+    fecha_informe = Column(VARCHAR(50), nullable=True, comment='Fecha del informe')
+    items = Column(JSON(True), nullable=True, comment='Items')
+    numero_informe = Column(VARCHAR(150), nullable=True, comment='Numero del informe')
+    reparticion = Column(VARCHAR(150), nullable=True, comment='Reparticion')
+    reparticion_text = Column(VARCHAR(150), nullable=True, comment='Reparticion')
+    responsable = Column(VARCHAR(150), nullable=True, comment='Responsable')
     total = Column(VARCHAR(150), nullable=True, comment='Total')
+    unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
 
 
 class ModelMovement(ModelBase):

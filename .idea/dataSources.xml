@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Dan\PycharmProjects\isabelino--informes-flask\data\informedb.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="@localhost" uuid="81bd1c4f-d459-4f27-9304-d11550d0f831">
+    <data-source source="LOCAL" name="senave_database@localhost" uuid="101435be-9126-411f-a444-c862e2f45609">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3333</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/senave_database</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

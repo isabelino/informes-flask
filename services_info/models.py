@@ -380,3 +380,11 @@ def update_by(id, registro):  # ['date','concept','quantity']
     connectUpdate = Conexion(f"UPDATE movements SET date=?,concept=?,quantity=? WHERE id={id}", registro)
     connectUpdate.con.commit()
     connectUpdate.con.close()
+
+
+def select_year_contador_by(num):
+    connectSelectYearBy = Conexion(
+        f'SELECT strftime("%Y", fecha) as year from contadores WHERE informe="{num}" ORDER BY id DESC LIMIT 1;')
+    resultado = connectSelectYearBy.res.fetchall()
+    connectSelectYearBy.con.close()
+    return resultado

@@ -8,21 +8,28 @@ from sqlalchemy.exc import DatabaseError
 from api_v2.conexion import repo_session
 from api_v2.loggers import logger
 from api_v2.models import ModelFC04
-from core.generators import last_report_id
+from core.decorators import catch_errors
+from core.generators import last_report_id, set_report_id
 from core.responses import make_response
 
 
 class FC04Service(MethodView):
+    decorators = [catch_errors]
 
     def post(self):
         logger.debug("Obtiene la lista de FC04")
         data = request.get_json()
         logger.warning(data)
 
+        report_id = last_report_id("fc04")
+
         model = ModelFC04()
         model.from_dict(data)
-        model.numero = last_report_id("fc04")
-        model.fecha = datetime.date.today().isoformat()
+        model.nro_informe = report_id
+        model.fecha = datetime.date.today()
+
+        # establecer el siguiente numero de reporte
+        set_report_id("fc04", report_id + 1)
 
         items = [{'cuenta': '26112',
                   'subcuenta': '\n 03',
@@ -73,6 +80,8 @@ class FC04Service(MethodView):
 
 
 class FC04ItemsService(MethodView):
+    decorators = [catch_errors]
+
     def get(self):
         with repo_session() as s:
             lista = s.query(ModelFC04.items).order_by(ModelFC04.id.desc()).all()
@@ -80,6 +89,8 @@ class FC04ItemsService(MethodView):
 
 
 class FC04ListService(MethodView):
+    decorators = [catch_errors]
+
     def get(self):
         """
         Obtiene la lista de FC04

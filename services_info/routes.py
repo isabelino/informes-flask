@@ -598,3 +598,23 @@ class Routes:
                         "status": "Error"
                     }
                 ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http
+
+        @app.route(f"/api/{VERSION}/year/<num>")
+        def contador_year_by_numero(num):
+
+            try:
+                registros = select_year_contador_by(num)
+                if len(registros) == 0:
+                    registros = [[0]]
+                return jsonify(
+                    {
+                        "data": int(registros[0][0])
+                    }
+                ), HTTPStatus.OK  # agrego codigo de respuesta http
+            except sqlite3.Error as e:
+                return jsonify(
+                    {
+                        "data": str(e),
+                        "status": "Error"
+                    }
+                ), HTTPStatus.BAD_REQUEST  # agrego codigo de respuesta http

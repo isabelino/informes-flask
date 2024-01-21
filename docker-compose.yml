@@ -1,23 +1,23 @@
 version: '3.3'
 
-volumes:
-  database:
+#volumes:
+#  database:
 
 services:
-  database:
-    image: mysql/mysql-server:latest
-    container_name: senave_database
-    command: --default-authentication-plugin=mysql_native_password  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    restart: always
-    environment:
-      MYSQL_ROOT_HOST: '%'
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mysql
-      TZ: "America/Asuncion"
-    ports:
-      - 3333:3306
-    volumes:
-      - database:/var/lib/mysql
+  #  database:
+  #    image: mysql/mysql-server:latest
+  #    container_name: senave_database
+  #    command: --default-authentication-plugin=mysql_native_password  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  #    restart: always
+  #    environment:
+  #      MYSQL_ROOT_HOST: '%'
+  #      MYSQL_ROOT_PASSWORD: root
+  #      MYSQL_DATABASE: mysql
+  #      TZ: "America/Asuncion"
+  #    ports:
+  #      - 3333:3306
+  #    volumes:
+  #      - database:/var/lib/mysql
 
   aplication:
     build:
@@ -30,12 +30,12 @@ services:
       - FLASK_APP=main.py
       - FLASK_DEBUG=True
       # database settings
-      - DATABASE_HOST=database
+      - DATABASE_HOST=localhost
       - DATABASE_PORT=3306
       - DATABASE_NAME=senave_database
       - DATABASE_USER=root
-      - DATABASE_PASS=root
-    depends_on:
-      - database
-    links:
-      - database
+      - DATABASE_PASS=0kmelica
+#    depends_on:
+#      - database
+#    links:
+#      - database
