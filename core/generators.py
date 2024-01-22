@@ -41,6 +41,7 @@ def set_report_id(informe_name: str, value: int):
     :param value:
     :return:
     """
+    from api_v2.loggers import logger
     with repo_session() as s:
         obj = ModelContadores()
         obj.informe = informe_name
@@ -48,6 +49,7 @@ def set_report_id(informe_name: str, value: int):
         obj.numero = value
         s.add(obj)
         s.commit()
+        logger.info(f'Guarda el siguiente id {value} del informe {informe_name}')
 
 
 def current_date() -> str:

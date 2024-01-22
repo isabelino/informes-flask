@@ -41,6 +41,7 @@ api_v2.add_url_rule('/fc06/items/<year>', view_func=FC06ItemsService.as_view('fc
 # [fc10]----------------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/fc10/new', view_func=FC10Service.as_view('fc10'))
 api_v2.add_url_rule('/fc10/all', view_func=FC10ListService.as_view('fc10_list'))
+# api_v2.add_url_rule('/fc10/items')
 
 # [movements]-----------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/update/<int:id>', view_func=MovementsService.as_view('contador_update'))

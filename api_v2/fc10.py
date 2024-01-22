@@ -23,8 +23,6 @@ class FC10Service(MethodView):
         model.numero = last_report_id("fc10")
         model.cont_informe = model.numero
 
-        set_report_id("fc10", model.numero + 1)
-
         with repo_session() as s:
             try:
                 s.add(model)
@@ -33,6 +31,7 @@ class FC10Service(MethodView):
                 return make_response(e, 400)
             else:
                 s.commit()
+                set_report_id("fc10", model.numero + 1)
                 return make_response(model.as_dict())
 
 
@@ -42,4 +41,5 @@ class FC10ListService(MethodView):
     def get(self):
         with repo_session() as s:
             lista = s.query(ModelFC10).order_by(ModelFC10.id.desc()).all()
+            logger.debug(lista)
         return make_response(lista)

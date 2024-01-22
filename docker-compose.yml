@@ -34,7 +34,7 @@ services:
       - DATABASE_PORT=3306
       - DATABASE_NAME=senave_database
       - DATABASE_USER=root
-      - DATABASE_PASS=0kmelica
+      - DATABASE_PASS=root
 #    depends_on:
 #      - database
 #    links:
