@@ -27,7 +27,7 @@ class FC04Service(MethodView):
         model.from_dict(data)
         model.nro_informe = report_id
         model.fecha = datetime.date.today()
-
+        model.cont_informe = model.nro_informe
         # establecer el siguiente numero de reporte
         set_report_id("fc04", report_id + 1)
 

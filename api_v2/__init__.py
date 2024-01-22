@@ -16,6 +16,7 @@ api_v2.add_url_rule('/test', view_func=Prueba.as_view('test'))
 
 # [contador]------------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/contador/<name>', view_func=ContadorService.as_view('contador_api'))
+api_v2.add_url_rule('/contadores', view_func=ContadoresService.as_view('contadores_api'))
 
 # [fc03]----------------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/fc03/new', view_func=FC03Service.as_view('fc03'))

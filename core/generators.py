@@ -21,7 +21,7 @@ def last_report_id(informe_name: str) -> int:
             .limit(1) \
             .one_or_none()
 
-        value = 0 if obj is None else obj.numero
+        value = 1 if obj is None else obj.numero
 
         # # save position
         # obj = ModelContadores()
