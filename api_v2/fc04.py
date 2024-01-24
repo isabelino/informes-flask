@@ -21,15 +21,13 @@ class FC04Service(MethodView):
         data = request.get_json()
         logger.warning(data)
 
-        report_id = last_report_id("fc04")
+        report_id = last_report_id("fc04") + 1
 
         model = ModelFC04()
         model.from_dict(data)
         model.nro_informe = report_id
         model.fecha = datetime.date.today()
         model.cont_informe = model.nro_informe
-        # establecer el siguiente numero de reporte
-        set_report_id("fc04", report_id + 1)
 
         items = [{'cuenta': '26112',
                   'subcuenta': '\n 03',
@@ -76,7 +74,8 @@ class FC04Service(MethodView):
             else:
                 s.commit()
                 logger.success(model.as_dict())
-                set_report_id("fc04", report_id + 1)
+                # establecer el siguiente numero de reporte
+                set_report_id("fc04", report_id)
                 return make_response(model.as_dict())
 
 
