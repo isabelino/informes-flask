@@ -76,6 +76,7 @@ class FC04Service(MethodView):
             else:
                 s.commit()
                 logger.success(model.as_dict())
+                set_report_id("fc04", report_id + 1)
                 return make_response(model.as_dict())
 
 

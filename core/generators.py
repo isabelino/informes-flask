@@ -5,12 +5,12 @@ from api_v2.models import ModelContadores
 
 
 def last_report_id(informe_name: str) -> int:
-    from api_v2.loggers import logger
     """
     Buscar el siguiente id del informe especificado
     :param informe_name:
-    :return:
+    :return: int
     """
+    from api_v2.loggers import logger
     if not informe_name:
         raise ValueError('El informe es requerido')
 
@@ -24,7 +24,6 @@ def last_report_id(informe_name: str) -> int:
 
         value = 0 if obj is None else obj.numero
         logger.info(f'valor del informe {informe_name} es {value}')
-
         return value
 
 

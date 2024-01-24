@@ -14,14 +14,17 @@ class FC10Service(MethodView):
     decorators = [catch_errors]
 
     def post(self):
+
+        report_id = last_report_id("fc10")
+
         data = request.get_json()
         logger.success(data)
         model = ModelFC10()
         model.from_dict(data)
         model.fecha = current_date()
         model.fecha_informe = current_date()
-        model.numero = last_report_id("fc10")
-        model.cont_informe = last_report_id("fc10")
+        model.numero = report_id
+        model.cont_informe = report_id
 
         with repo_session() as s:
             try:
@@ -31,7 +34,7 @@ class FC10Service(MethodView):
                 return make_response(e, 400)
             else:
                 s.commit()
-                set_report_id("fc10", last_report_id("fc10") + 1)
+                set_report_id("fc10", report_id + 1)
                 return make_response(model.as_dict())
 
 
