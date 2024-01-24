@@ -2,6 +2,7 @@ from flask import *
 
 from api_v2.apitest import Prueba
 from api_v2.contadores import ContadoresService, ContadorService, ContadorLastIdService
+from api_v2.extras import ExtraYearServices
 from api_v2.fc03 import FC03Service, FC03ByDateService, FC03ListService
 from api_v2.fc04 import FC04Service, FC04ListService, FC04ItemsService
 from api_v2.fc05 import FC05Service, FC05ByDateService, FC05ItemsService, FC05ListService
@@ -18,6 +19,9 @@ api_v2.add_url_rule('/test', view_func=Prueba.as_view('test'))
 # [contador]------------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/contador/<name>', view_func=ContadorService.as_view('contador_api'))
 api_v2.add_url_rule('/contadores', view_func=ContadoresService.as_view('contadores_api'))
+
+# [years]----------------------------------------------------------------------------------------------------------------
+api_v2.add_url_rule('/year/<report>', view_func=ExtraYearServices.as_view('last_id'))
 
 # [fc03]----------------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/fc03/new', view_func=FC03Service.as_view('fc03'))
@@ -43,6 +47,7 @@ api_v2.add_url_rule('/fc06/items/<year>', view_func=FC06ItemsService.as_view('fc
 api_v2.add_url_rule('/fc10/new', view_func=FC10Service.as_view('fc10'))
 api_v2.add_url_rule('/fc10/all', view_func=FC10ListService.as_view('fc10_list'))
 # api_v2.add_url_rule('/fc10/items')
+
 
 # [movements]-----------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/update/<int:id>', view_func=MovementsService.as_view('contador_update'))
