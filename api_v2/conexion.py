@@ -126,3 +126,4 @@ def repo():
 def repo_session():
     with repo() as db:
         yield db.get_session()
+

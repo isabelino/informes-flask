@@ -8,6 +8,7 @@ from api_v2.fc05 import FC05Service, FC05ByDateService, FC05ItemsService, FC05Li
 from api_v2.fc06 import FC06Service, FC06ItemsService
 from api_v2.fc10 import FC10Service, FC10ListService
 from api_v2.movements import MovementsService
+from api_v2.status import StatusService
 
 api_v2 = Blueprint('api_v2', __name__)
 
@@ -46,3 +47,5 @@ api_v2.add_url_rule('/fc10/all', view_func=FC10ListService.as_view('fc10_list'))
 # [movements]-----------------------------------------------------------------------------------------------------------
 api_v2.add_url_rule('/update/<int:id>', view_func=MovementsService.as_view('contador_update'))
 api_v2.add_url_rule('/delete/<int:id>', view_func=MovementsService.as_view('contador_delete'))
+
+api_v2.add_url_rule('/status', view_func=StatusService.as_view('status_service'))

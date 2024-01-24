@@ -3,8 +3,8 @@ import decimal
 import json
 from builtins import issubclass
 
-from api_v2.models import ModelBase
 from api_v2.loggers import logger
+from api_v2.models import ModelBase
 
 
 class CustomJsonEncoder(json.JSONEncoder):
@@ -21,6 +21,8 @@ class CustomJsonEncoder(json.JSONEncoder):
             return float(obj)
         elif issubclass(obj.__class__, ModelBase):
             return obj.as_dict()
+        elif isinstance(obj, bool):
+            return 1 if obj else 0
         elif isinstance(obj, Exception):
             return repr(obj)
         elif isinstance(obj, str) and (obj.startswith("[") or obj.startswith("{")):

@@ -5,6 +5,7 @@ from api_v2.models import ModelContadores
 
 
 def last_report_id(informe_name: str) -> int:
+    from api_v2.loggers import logger
     """
     Buscar el siguiente id del informe especificado
     :param informe_name:
@@ -21,15 +22,8 @@ def last_report_id(informe_name: str) -> int:
             .limit(1) \
             .one_or_none()
 
-        value = 1 if obj is None else obj.numero
-
-        # # save position
-        # obj = ModelContadores()
-        # obj.informe = informe_name
-        # obj.fecha = datetime.date.today().isoformat()
-        # obj.numero = value + 1
-        # s.add(obj)
-        # s.commit()
+        value = 0 if obj is None else obj.numero
+        logger.info(f'valor del informe {informe_name} es {value}')
 
         return value
 

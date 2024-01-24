@@ -4,20 +4,20 @@ version: '3.3'
 #  database:
 
 services:
-  #  database:
-  #    image: mysql/mysql-server:latest
-  #    container_name: senave_database
-  #    command: --default-authentication-plugin=mysql_native_password  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-  #    restart: always
-  #    environment:
-  #      MYSQL_ROOT_HOST: '%'
-  #      MYSQL_ROOT_PASSWORD: root
-  #      MYSQL_DATABASE: mysql
-  #      TZ: "America/Asuncion"
-  #    ports:
-  #      - 3333:3306
-  #    volumes:
-  #      - database:/var/lib/mysql
+  database:
+    image: mysql/mysql-server:latest
+    container_name: senave_database
+    command: --default-authentication-plugin=mysql_native_password  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql
+      TZ: "America/Asuncion"
+    ports:
+      - 3333:3306
+    volumes:
+      - /opt/databases/mysql:/var/lib/mysql
 
   aplication:
     build:
