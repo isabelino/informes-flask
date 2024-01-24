@@ -21,7 +21,7 @@ class FC10Service(MethodView):
         model.fecha = current_date()
         model.fecha_informe = current_date()
         model.numero = last_report_id("fc10")
-        model.cont_informe = model.numero
+        model.cont_informe = last_report_id("fc10")
 
         with repo_session() as s:
             try:
@@ -31,7 +31,7 @@ class FC10Service(MethodView):
                 return make_response(e, 400)
             else:
                 s.commit()
-                set_report_id("fc10", model.numero + 1)
+                set_report_id("fc10", last_report_id("fc10") + 1)
                 return make_response(model.as_dict())
 
 
