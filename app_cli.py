@@ -57,4 +57,4 @@ class AppCli:
         def ping(host, port):
             click.secho(f'Pinging {host}:{port}...', fg='yellow')
             result = tcppinglib.tcpping(host, port)
-            click.echo(result.is_alive)
+            click.echo('Conexion establecida (OK)' if result.is_alive else 'Conexion no establecida')
