@@ -1,6 +1,7 @@
 import os
 
 import click
+import tcppinglib
 
 from api_v2.conexion import repo
 from api_v2.models import ModelBase
@@ -49,3 +50,11 @@ class AppCli:
             for key, value in os.environ.items():
                 click.echo(f"{key}: {value}")
             click.secho('================', fg='green')
+
+        @app.cli.command()
+        @click.argument('host', default='127.0.0.1', required=False)
+        @click.argument('port', default=5000, required=False)
+        def ping(host, port):
+            click.secho(f'Pinging {host}:{port}...', fg='yellow')
+            result = tcppinglib.tcpping(host, port)
+            click.echo(result.is_alive)
