@@ -35,3 +35,13 @@ class AppCli:
             with repo() as db:
                 ModelBase.metadata.drop_all(db.get_engine())
             click.echo("Borrado")
+
+        @app.cli.command()
+        def settings():
+            click.secho('== SETTINGS ==', fg='green')
+            click.echo(os.getenv('DATABASE_USER'))
+            click.echo(os.getenv('DATABASE_PASS'))
+            click.echo(os.getenv('DATABASE_HOST'))
+            click.echo(os.getenv('DATABASE_PORT'))
+            click.echo(os.getenv('DATABASE_NAME'))
+            click.secho('==============', fg='green')
