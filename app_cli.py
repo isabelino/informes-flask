@@ -45,3 +45,7 @@ class AppCli:
             click.echo(f"port: {os.getenv('DATABASE_PORT')}")
             click.echo(f"name: {os.getenv('DATABASE_NAME')}")
             click.secho('==============', fg='green')
+            click.secho('== ENVIRONMENT ==', fg='green')
+            for key, value in os.environ.items():
+                click.echo(f"{key}: {value}")
+            click.secho('================', fg='green')
