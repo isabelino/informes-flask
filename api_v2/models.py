@@ -1,3 +1,6 @@
+from typing import Optional
+
+from pydantic import BaseModel
 from sqlalchemy import *
 from sqlalchemy.orm import *
 
@@ -99,6 +102,29 @@ class ModelFC04(ModelBase):
     sub_total = Column(VARCHAR(150), nullable=True, comment='Sub total')
     totales = Column(VARCHAR(150), nullable=True, comment='Totales')
     unidad_jerarquica = Column(VARCHAR(150), nullable=True, comment='Unidad jerarquica')
+
+
+class FC04Items(BaseModel):
+    cuenta: str
+    nombre_cuenta: str
+    sub_cuenta: str
+    nombre_subcuenta: str
+    analitico1: str
+    nombre_analitico1: str
+    analitico2: str
+    rotulo: str
+    descripcion: str
+    cantidad: str
+    valorUnitario: int
+    valorTotal: int
+    fecha: str
+    estado: str
+    vida_util: str
+    fecha_ingresada: str
+    factura: str
+    tipo: str
+    origen: str
+    signo: Optional[str]
 
 
 class ModelFC05(ModelBase):
