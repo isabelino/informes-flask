@@ -1,2 +1,3 @@
-ORIGIN_DATA="data/informedb.sqlite"
-VERSION="v1.0"
+# deprecated
+ORIGIN_DATA = "data/informedb.sqlite"
+VERSION = "v1.0"

@@ -5,7 +5,7 @@ from sqlalchemy.exc import DatabaseError
 from api_v2.conexion import repo_session
 from api_v2.models import ModelFC05
 from core.decorators import catch_errors
-from core.generators import last_report_id, set_report_id
+from core.generators import last_report_id, update_report_id
 from core.responses import make_response
 
 
@@ -19,15 +19,16 @@ class FC05Service(MethodView):
 
     def post(self):
         from api_v2.loggers import logger
+
+        report_id = last_report_id("fc05") + 1
+
         data = request.get_json()
         logger.warning(data)
         model = ModelFC05()
         model.from_dict(data)
         logger.success(model.as_dict())
         # model.fecha = current_date()
-        model.numero = last_report_id("fc05")
-
-        set_report_id("fc05", model.numero + 1)
+        model.numero = report_id
 
         with repo_session() as s:
             try:
@@ -39,6 +40,7 @@ class FC05Service(MethodView):
             else:
                 s.commit()
                 logger.success(model.as_dict())
+                update_report_id("fc05", report_id)
                 return make_response(model.as_dict())
 
 

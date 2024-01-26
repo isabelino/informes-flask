@@ -1,29 +1,16 @@
 from dotenv import load_dotenv
-from flask_swagger_ui import get_swaggerui_blueprint
 
 from api_v2 import api_v2
 from app_cli import AppCli
-from services_info import app, Routes
+from services_info import app
 
 load_dotenv()  # load .env file to environment
 
-routes = Routes(app)  # load routes
-
-SWAGGER_URL = "/swagger"
-API_URL = "/static/swagger.json"
+# deprecated blueprint: dgarcia: 25-01-2024: changed to api_v2
+# routes = Routes(app)  # load routes
 
 # registro del blueprint api_v2
 app.register_blueprint(api_v2, url_prefix='/api/v2/')
-
-# registro del blueprint swagger
-swagger_ui_blueprint = get_swaggerui_blueprint(
-    SWAGGER_URL,
-    API_URL,
-    config={
-        'app_name': "informes-senave"
-    }
-)
-app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_URL)
 
 commands = AppCli(app)
 

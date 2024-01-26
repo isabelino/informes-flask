@@ -492,9 +492,17 @@ class Routes:
 
                 insert_contador(['fc05', ultimo_numero, hoy])
                 insert_informe_fc05([
-                    registro['fecha'], registro['cuenta'], registro['nombre_cuenta'],
-                    registro['valor_unitario'], registro['origen'], registro['saldo'], registro['total'], ultimo_numero,
-                    hoy, str(datetime.today().month), str(datetime.today().year)
+                    registro['fecha'],
+                    registro['cuenta'],
+                    registro['nombre_cuenta'],
+                    registro['valor_unitario'],
+                    registro['origen'],
+                    registro['saldo'],
+                    registro['total'],
+                    ultimo_numero,
+                    hoy,
+                    str(datetime.today().month),
+                    str(datetime.today().year)
                 ])
                 return jsonify(
                     {

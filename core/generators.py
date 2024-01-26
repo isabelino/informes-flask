@@ -27,7 +27,7 @@ def last_report_id(informe_name: str) -> int:
         return value
 
 
-def set_report_id(informe_name: str, value: int) -> None:
+def update_report_id(informe_name: str, value: int) -> None:
     """
     Registrar el siguiente id del informe especificado
     :param informe_name:

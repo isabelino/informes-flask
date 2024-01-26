@@ -1,2 +1,0 @@
-listado = []
-print(len(listado))

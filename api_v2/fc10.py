@@ -6,7 +6,7 @@ from api_v2.conexion import repo_session
 from api_v2.loggers import logger
 from api_v2.models import ModelFC10
 from core.decorators import catch_errors
-from core.generators import last_report_id, current_date, set_report_id
+from core.generators import last_report_id, current_date, update_report_id
 from core.responses import make_response
 
 
@@ -26,7 +26,7 @@ class FC10Service(MethodView):
         model.numero = report_id
         model.cont_informe = report_id
 
-        logger.warning(model.as_dict())
+        logger.debug(model.as_dict())
 
         with repo_session() as s:
             try:
@@ -36,7 +36,7 @@ class FC10Service(MethodView):
                 return make_response(e, 400)
             else:
                 s.commit()
-                set_report_id("fc10", report_id)
+                update_report_id("fc10", report_id)
                 return make_response(model.as_dict())
 
 
